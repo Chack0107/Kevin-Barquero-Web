@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  Menu, X, Instagram, Youtube, Twitter,
+  Instagram, Youtube, Twitter,
   TrendingUp, Shield, Zap, ArrowRight,
   ExternalLink, Play, Users, Award, BarChart3, ChevronDown
 } from 'lucide-react';
@@ -26,7 +26,6 @@ function FadeSection({ children, className = '' }: { children: React.ReactNode; 
 }
 
 export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [popButton, setPopButton] = useState<string | null>(null);
 
@@ -38,7 +37,6 @@ export default function App() {
 
   const goto = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    setMenuOpen(false);
   };
 
   const handleNavClick = (id: string) => {
