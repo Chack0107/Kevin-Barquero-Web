@@ -145,7 +145,7 @@ export default function App() {
                 Kevin<br /><span className="text-[#6e6e73]">Barquero</span>
               </h1>
               <p className="text-[17px] sm:text-[20px] text-[#6e6e73] leading-relaxed mb-10">
-                Especialista en Web3, Blockchain y Trading. Ayudando a personas a alcanzar su libertad financiera desde Costa Rica 🇨🇷
+                Especialista en Web3, Blockchain y Trading. Ayudando a personas a alcanzar su libertad financiera desde Costa Rica
               </p>
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-12">
                 <button onClick={() => goto('portfolio')} className="inline-flex items-center gap-2 bg-[#1d1d1f] text-white text-[15px] font-medium px-7 py-3.5 rounded-full hover:bg-[#333] transition-colors">
