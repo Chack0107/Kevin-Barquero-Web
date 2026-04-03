@@ -117,11 +117,11 @@ export default function App() {
         <div className="absolute inset-0 bg-cover bg-center opacity-[0.04]" style={{ backgroundImage: 'url(/hero-bg.jpg)' }} />
 
         {/* Foto — solo visible en desktop, lado derecho anclada al fondo */}
-        <div className="hidden lg:flex absolute right-0 bottom-0 h-full w-1/2 items-end justify-end pointer-events-none select-none">
+        <div className="hidden lg:flex absolute right-20 bottom-0 h-full w-1/2 items-end justify-end pointer-events-none select-none">
           <img
             src="/kevin-hero.png"
             alt="Kevin Barquero"
-            className="h-[92%] w-auto object-contain object-bottom"
+            className="h-[80%] w-auto object-contain object-bottom"
             style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 10%)' }}
           />
         </div>
