@@ -28,6 +28,7 @@ function FadeSection({ children, className = '' }: { children: React.ReactNode; 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [popButton, setPopButton] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -38,6 +39,12 @@ export default function App() {
   const goto = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
+  };
+
+  const handleNavClick = (id: string) => {
+    setPopButton(id);
+    goto(id);
+    setTimeout(() => setPopButton(null), 300);
   };
 
   const navItems = [
@@ -336,8 +343,10 @@ export default function App() {
         {navItems.map(n => (
           <button
             key={n.id}
-            onClick={() => goto(n.id)}
-            className="flex flex-col items-center justify-center gap-1 flex-1 h-full text-[#6e6e73] hover:text-[#1d1d1f] transition-colors group"
+            onClick={() => handleNavClick(n.id)}
+            className={`flex flex-col items-center justify-center gap-1 flex-1 h-full text-[#6e6e73] hover:text-[#1d1d1f] transition-colors group ${
+              popButton === n.id ? 'animate-button-pop' : ''
+            }`}
           >
             <div className="text-[22px]">
               {n.id === 'hero' && '🏠'}
