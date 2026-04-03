@@ -338,24 +338,27 @@ export default function App() {
 
       {/* FOOTER MOBILE - TAB BAR NAV */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100 flex justify-around items-center h-20">
-        {navItems.map(n => (
-          <button
-            key={n.id}
-            onClick={() => handleNavClick(n.id)}
-            className={`flex flex-col items-center justify-center gap-1 flex-1 h-full text-[#6e6e73] hover:text-[#1d1d1f] transition-colors group ${
-              popButton === n.id ? 'animate-button-pop' : ''
-            }`}
-          >
-            <div className="text-[22px]">
-              {n.id === 'hero' && '🏠'}
-              {n.id === 'about' && 'ℹ️'}
-              {n.id === 'consulting' && '💼'}
-              {n.id === 'portfolio' && '🎯'}
-              {n.id === 'contact' && '📞'}
-            </div>
-            <span className="text-[10px] font-medium group-hover:text-[#1d1d1f]">{n.label}</span>
-          </button>
-        ))}
+        {navItems.map(n => {
+          const iconUrls: Record<string, string> = {
+            hero: 'https://www.svgrepo.com/show/529023/home-smile.svg',
+            about: 'https://www.svgrepo.com/show/506667/person.svg',
+            consulting: 'https://www.svgrepo.com/show/533410/briefcase-alt-2.svg',
+            portfolio: 'https://www.svgrepo.com/show/166037/dartboard-and-dart.svg',
+            contact: 'https://www.svgrepo.com/show/522680/telephone-signal.svg',
+          };
+          return (
+            <button
+              key={n.id}
+              onClick={() => handleNavClick(n.id)}
+              className={`flex flex-col items-center justify-center gap-1 flex-1 h-full text-[#6e6e73] hover:text-[#1d1d1f] transition-colors group ${
+                popButton === n.id ? 'animate-button-pop' : ''
+              }`}
+            >
+              <img src={iconUrls[n.id]} alt={n.label} className="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity" />
+              <span className="text-[10px] font-medium group-hover:text-[#1d1d1f]">{n.label}</span>
+            </button>
+          );
+        })}
       </nav>
     </div>
   );
