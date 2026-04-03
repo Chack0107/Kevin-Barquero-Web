@@ -72,22 +72,11 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
-        "pop-in": {
-          "0%": { opacity: "0", transform: "scale(0.8)" },
-          "50%": { transform: "scale(1.05)" },
-          "100%": { opacity: "1", transform: "scale(1)" },
-        },
-        "pop-out": {
-          "0%": { opacity: "1", transform: "scale(1)" },
-          "100%": { opacity: "0", transform: "scale(0.8)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
-        "pop-in": "pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
-        "pop-out": "pop-out 0.4s ease-in",
       },
     },
   },
