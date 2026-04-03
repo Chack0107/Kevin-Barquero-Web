@@ -28,7 +28,6 @@ function FadeSection({ children, className = '' }: { children: React.ReactNode; 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [popButton, setPopButton] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -39,12 +38,6 @@ export default function App() {
   const goto = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
-  };
-
-  const handleNavClick = (id: string) => {
-    setPopButton(id);
-    goto(id);
-    setTimeout(() => setPopButton(null), 300);
   };
 
   const navItems = [
@@ -86,24 +79,35 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-[#1d1d1f] font-sans pb-20 md:pb-0">
+    <div className="min-h-screen bg-white text-[#1d1d1f] font-sans">
 
-      {/* NAV DESKTOP */}
-      <nav className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'apple-blur border-b border-gray-200/60' : 'bg-transparent'}`}>
+      {/* NAV */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'apple-blur border-b border-gray-200/60' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-14">
           <button onClick={() => goto('hero')} className="flex items-center gap-2.5">
             <img src="/logo.png" alt="KB" className="h-8 w-8 rounded-full object-cover" />
             <span className="font-semibold text-[15px] text-[#1d1d1f]">Kevin Barquero</span>
           </button>
-          <div className="flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-7">
             {navItems.map(n => (
               <button key={n.id} onClick={() => goto(n.id)} className="text-[13px] text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">{n.label}</button>
             ))}
           </div>
-          <button onClick={() => goto('contact')} className="inline-flex items-center gap-1.5 bg-[#1d1d1f] text-white text-[13px] font-medium px-4 py-2 rounded-full hover:bg-[#333] transition-colors">
+          <button onClick={() => goto('contact')} className="hidden md:inline-flex items-center gap-1.5 bg-[#1d1d1f] text-white text-[13px] font-medium px-4 py-2 rounded-full hover:bg-[#333] transition-colors">
             Contactar
           </button>
+          <button className="md:hidden text-[#1d1d1f]" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
+        {menuOpen && (
+          <div className="md:hidden apple-blur border-t border-gray-200/60 px-6 py-5 flex flex-col gap-4">
+            {navItems.map(n => (
+              <button key={n.id} onClick={() => goto(n.id)} className="text-left text-[15px] text-[#1d1d1f] font-medium py-1">{n.label}</button>
+            ))}
+            <button onClick={() => goto('contact')} className="mt-2 bg-[#1d1d1f] text-white text-[14px] font-medium py-3 rounded-full">Contactar</button>
+          </div>
+        )}
       </nav>
 
       {/* HERO */}
@@ -123,7 +127,7 @@ export default function App() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 lg:px-8 min-h-screen flex flex-col justify-center pt-24 md:pt-24 pb-32 md:pb-20">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 min-h-screen flex flex-col justify-center pt-24 pb-20">
           <div className="max-w-xl text-center lg:text-left mx-auto lg:mx-0">
             <FadeSection>
 
@@ -136,18 +140,18 @@ export default function App() {
                 />
               </div>
 
-              <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-6">Inversionista · Emprendedor · Web3</p>
-              <h1 className="text-[42px] sm:text-[68px] lg:text-[92px] font-bold leading-[1.02] tracking-tight text-[#1d1d1f] mb-6">
+              <p className="text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-6">Inversionista · Emprendedor · Web3</p>
+              <h1 className="text-[52px] sm:text-[68px] lg:text-[92px] font-bold leading-[1.02] tracking-tight text-[#1d1d1f] mb-6">
                 Kevin<br /><span className="text-[#6e6e73]">Barquero</span>
               </h1>
-              <p className="text-[16px] sm:text-[20px] text-[#6e6e73] leading-relaxed mb-10">
+              <p className="text-[17px] sm:text-[20px] text-[#6e6e73] leading-relaxed mb-10">
                 Especialista en Web3, Blockchain y Trading. Ayudando a personas a alcanzar su libertad financiera desde Costa Rica 🇨🇷
               </p>
-              <div className="flex flex-col md:flex-row flex-wrap gap-3 justify-center lg:justify-start mb-12">
-                <button onClick={() => goto('portfolio')} className="inline-flex items-center justify-center gap-2 bg-[#1d1d1f] text-white text-[15px] font-medium px-6 md:px-7 py-4 md:py-3.5 rounded-full hover:bg-[#333] transition-colors">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-12">
+                <button onClick={() => goto('portfolio')} className="inline-flex items-center gap-2 bg-[#1d1d1f] text-white text-[15px] font-medium px-7 py-3.5 rounded-full hover:bg-[#333] transition-colors">
                   Ver Portafolio <ArrowRight size={16} />
                 </button>
-                <button onClick={() => goto('about')} className="inline-flex items-center justify-center gap-2 bg-white text-[#1d1d1f] text-[15px] font-medium px-6 md:px-7 py-4 md:py-3.5 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
+                <button onClick={() => goto('about')} className="inline-flex items-center gap-2 bg-white text-[#1d1d1f] text-[15px] font-medium px-7 py-3.5 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
                   Conóceme Más
                 </button>
               </div>
@@ -173,9 +177,9 @@ export default function App() {
       </section>
 
       {/* STATS */}
-      <section className="border-y border-gray-100 bg-[#f5f5f7] py-8 md:py-10">
+      <section className="border-y border-gray-100 bg-[#f5f5f7] py-10">
         <FadeSection>
-          <div className="max-w-4xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+          <div className="max-w-4xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((s, i) => (
               <div key={i}>
                 <p className="text-[32px] sm:text-[36px] font-bold tracking-tight text-[#1d1d1f]">{s.value}</p>
@@ -187,16 +191,16 @@ export default function App() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-16 md:py-20 lg:py-36 bg-white">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <section id="about" className="py-20 lg:py-36 bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <FadeSection>
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               <div>
-                <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4 flex items-center gap-2 justify-center lg:justify-start"><Award size={14} /> Sobre Mí</p>
-                <h2 className="text-[28px] sm:text-[48px] font-bold tracking-tight leading-[1.1] mb-7 text-[#1d1d1f] text-center lg:text-left">
+                <p className="text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4 flex items-center gap-2 justify-center lg:justify-start"><Award size={14} /> Sobre Mí</p>
+                <h2 className="text-[36px] sm:text-[48px] font-bold tracking-tight leading-[1.1] mb-7 text-[#1d1d1f] text-center lg:text-left">
                   Inversionista &<br />Emprendedor Digital.
                 </h2>
-                <div className="space-y-4 text-[15px] md:text-[16px] text-[#6e6e73] leading-relaxed text-center lg:text-left">
+                <div className="space-y-4 text-[16px] text-[#6e6e73] leading-relaxed text-center lg:text-left">
                   <p>Soy <strong className="text-[#1d1d1f]">Kevin A. Barquero</strong>, apasionado del mundo digital, las inversiones y la tecnología blockchain. Nacido en <strong className="text-[#1d1d1f]">Costa Rica</strong> 🇨🇷 y actualmente en <strong className="text-[#1d1d1f]">Panamá</strong> 🇵🇦.</p>
                   <p>Como creador de contenido en <strong className="text-[#1d1d1f]">YouTube</strong>, comparto conocimientos sobre trading, criptomonedas, Web3 y estrategias de inversión para empoderar la libertad financiera.</p>
                   <p>Estoy <strong className="text-[#1d1d1f]">obsessed with success</strong> y creo que cada persona debería dedicarse a lo que realmente le apasiona.</p>
@@ -223,16 +227,16 @@ export default function App() {
       </section>
 
       {/* SERVICES */}
-      <section id="consulting" className="py-16 md:py-20 lg:py-36 bg-[#f5f5f7]">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <section id="consulting" className="py-20 lg:py-36 bg-[#f5f5f7]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <FadeSection>
-            <div className="text-center mb-8 md:mb-12 lg:mb-16">
-              <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4">Consultoría</p>
-              <h2 className="text-[28px] sm:text-[48px] font-bold tracking-tight leading-[1.1] text-[#1d1d1f] mb-4">Servicios.</h2>
-              <p className="text-[15px] md:text-[17px] text-[#6e6e73] max-w-xl mx-auto">Navega el mundo de las criptomonedas, blockchain e inversiones digitales con guía experta.</p>
+            <div className="text-center mb-12 lg:mb-16">
+              <p className="text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4">Consultoría</p>
+              <h2 className="text-[36px] sm:text-[48px] font-bold tracking-tight leading-[1.1] text-[#1d1d1f] mb-4">Servicios.</h2>
+              <p className="text-[17px] text-[#6e6e73] max-w-xl mx-auto">Navega el mundo de las criptomonedas, blockchain e inversiones digitales con guía experta.</p>
             </div>
           </FadeSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s, i) => (
               <FadeSection key={i}>
                 <div className="bg-white rounded-2xl p-6 lg:p-7 hover:shadow-md transition-shadow h-full">
@@ -247,16 +251,16 @@ export default function App() {
       </section>
 
       {/* PORTFOLIO */}
-      <section id="portfolio" className="py-16 md:py-20 lg:py-36 bg-white">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <section id="portfolio" className="py-20 lg:py-36 bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <FadeSection>
-            <div className="text-center mb-8 md:mb-12 lg:mb-16">
-              <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4">Portafolio</p>
-              <h2 className="text-[28px] sm:text-[48px] font-bold tracking-tight leading-[1.1] text-[#1d1d1f] mb-4">Empresas & Proyectos.</h2>
-              <p className="text-[15px] md:text-[17px] text-[#6e6e73] max-w-xl mx-auto">Proyectos innovadores en el ecosistema blockchain y fintech de Latinoamérica.</p>
+            <div className="text-center mb-12 lg:mb-16">
+              <p className="text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4">Portafolio</p>
+              <h2 className="text-[36px] sm:text-[48px] font-bold tracking-tight leading-[1.1] text-[#1d1d1f] mb-4">Empresas & Proyectos.</h2>
+              <p className="text-[17px] text-[#6e6e73] max-w-xl mx-auto">Proyectos innovadores en el ecosistema blockchain y fintech de Latinoamérica.</p>
             </div>
           </FadeSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 lg:gap-5">
             {portfolio.map((p, i) => (
               <FadeSection key={i}>
                 <div className="bg-[#f5f5f7] rounded-2xl p-6 lg:p-8 hover:bg-[#ebebed] transition-colors h-full flex flex-col">
@@ -279,16 +283,16 @@ export default function App() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-16 md:py-20 lg:py-36 bg-[#1d1d1f] text-white">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <section id="contact" className="py-20 lg:py-36 bg-[#1d1d1f] text-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <FadeSection>
-            <div className="text-center mb-8 md:mb-12 lg:mb-16">
-              <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#86868b] mb-4">Contacto</p>
-              <h2 className="text-[28px] sm:text-[56px] font-bold tracking-tight leading-[1.05] mb-4">Trabajemos Juntos.</h2>
-              <p className="text-[15px] md:text-[17px] text-[#86868b] max-w-xl mx-auto">¿Tenés un proyecto en mente o querés colaborar? Estoy aquí.</p>
+            <div className="text-center mb-12 lg:mb-16">
+              <p className="text-[12px] font-semibold tracking-widest uppercase text-[#86868b] mb-4">Contacto</p>
+              <h2 className="text-[36px] sm:text-[56px] font-bold tracking-tight leading-[1.05] mb-4">Trabajemos Juntos.</h2>
+              <p className="text-[17px] text-[#86868b] max-w-xl mx-auto">¿Tenés un proyecto en mente o querés colaborar? Estoy aquí.</p>
             </div>
           </FadeSection>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <FadeSection>
               <div className="space-y-3">
                 {socials.map((s, i) => (
@@ -312,7 +316,7 @@ export default function App() {
                 <h3 className="text-[22px] lg:text-[24px] font-bold mb-3">¿Listo para Empezar?</h3>
                 <p className="text-[14px] lg:text-[15px] text-[#86868b] leading-relaxed mb-8">Ya sea consultoría, colaboración o simplemente charlar sobre Web3 y cripto — no dudes en escribirme.</p>
                 <button onClick={() => window.open('https://linktr.ee/kevinbarquerocrypto', '_blank')}
-                  className="w-full bg-white text-[#1d1d1f] font-semibold py-4 md:py-3.5 rounded-full hover:bg-gray-100 transition-colors text-[15px]">
+                  className="w-full bg-white text-[#1d1d1f] font-semibold py-3.5 rounded-full hover:bg-gray-100 transition-colors text-[15px]">
                   Ver todos mis links
                 </button>
                 <p className="mt-5 text-[12px] text-[#6e6e73]">⚠️ I DON'T DM FOR MONEY · Beware of Scams</p>
@@ -322,8 +326,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* FOOTER DESKTOP */}
-      <footer className="hidden md:block py-8 bg-[#1d1d1f] border-t border-white/10">
+      {/* FOOTER */}
+      <footer className="py-8 bg-[#1d1d1f] border-t border-white/10">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
             <img src="/logo.png" alt="KB" className="h-7 w-7 rounded-full object-cover" />
@@ -337,28 +341,6 @@ export default function App() {
           <p className="text-[13px] text-[#6e6e73]">© 2026 Kevin Barquero.</p>
         </div>
       </footer>
-
-      {/* FOOTER MOBILE - TAB BAR NAV */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100 flex justify-around items-center h-20">
-        {navItems.map(n => (
-          <button
-            key={n.id}
-            onClick={() => handleNavClick(n.id)}
-            className={`flex flex-col items-center justify-center gap-1 flex-1 h-full text-[#6e6e73] hover:text-[#1d1d1f] transition-colors group ${
-              popButton === n.id ? 'animate-button-pop' : ''
-            }`}
-          >
-            <div className="text-[22px]">
-              {n.id === 'hero' && '🏠'}
-              {n.id === 'about' && 'ℹ️'}
-              {n.id === 'consulting' && '💼'}
-              {n.id === 'portfolio' && '🎯'}
-              {n.id === 'contact' && '📞'}
-            </div>
-            <span className="text-[10px] font-medium group-hover:text-[#1d1d1f]">{n.label}</span>
-          </button>
-        ))}
-      </nav>
     </div>
   );
 }
