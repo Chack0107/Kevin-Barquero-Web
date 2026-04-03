@@ -59,13 +59,15 @@
 
   .section-fade {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: scale(0.8);
   }
 
   .section-fade.visible {
-    opacity: 1;
-    transform: translateY(0);
+    animation: pop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .section-fade.pop-exit {
+    animation: pop-out 0.4s ease-in forwards;
   }
 }
 

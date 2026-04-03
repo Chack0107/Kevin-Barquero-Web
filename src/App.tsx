@@ -11,7 +11,14 @@ function useFadeIn() {
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) el.classList.add('visible'); },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.remove('pop-exit');
+          el.classList.add('visible');
+        } else if (el.classList.contains('visible')) {
+          el.classList.add('pop-exit');
+        }
+      },
       { threshold: 0.12 }
     );
     obs.observe(el);
