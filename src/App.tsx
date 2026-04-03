@@ -341,7 +341,7 @@ export default function App() {
         {navItems.map(n => {
           const iconUrls: Record<string, string> = {
             hero: 'https://www.svgrepo.com/show/529023/home-smile.svg',
-            about: 'https://www.svgrepo.com/show/506667/person.svg',
+            about: 'https://www.svgrepo.com/show/532363/user-alt-1.svg',
             consulting: 'https://www.svgrepo.com/show/533410/briefcase-alt-2.svg',
             portfolio: 'https://www.svgrepo.com/show/166037/dartboard-and-dart.svg',
             contact: 'https://www.svgrepo.com/show/522680/telephone-signal.svg',
