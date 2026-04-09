@@ -27,11 +27,43 @@ function FadeSection({ children, className = '' }: { children: React.ReactNode; 
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const [popButton, setPopButton] = useState<string | null>(null);
+  const signatureRef = useRef<HTMLImageElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [isAnimatingSignature, setIsAnimatingSignature] = useState(false);
+  const [signaturePosition, setSignaturePosition] = useState({ top: 0, left: 0, width: 0, height: 0 });
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+      setScrolled(currentScrollY > 40);
+
+      // Detectar si salimos del hero y animar signature
+      const heroElement = heroRef.current;
+      const signatureElement = signatureRef.current;
+
+      if (heroElement && signatureElement) {
+        const heroBottom = heroElement.offsetHeight;
+        const shouldAnimate = currentScrollY > heroBottom * 0.5;
+        setIsAnimatingSignature(shouldAnimate);
+
+        if (shouldAnimate) {
+          // Calcular la posición actual del signature en el documento
+          const rect = signatureElement.getBoundingClientRect();
+          setSignaturePosition({
+            top: rect.top + currentScrollY,
+            left: rect.left,
+            width: rect.width,
+            height: rect.height,
+          });
+        }
+      }
+    };
+
     window.addEventListener('scroll', onScroll);
+    onScroll(); // Ejecutar una vez al montar
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -90,7 +122,7 @@ export default function App() {
       <nav className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'apple-blur border-b border-gray-200/60' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-14">
           <button onClick={() => goto('hero')} className="flex items-center gap-2.5">
-            <img src="/logo.png" alt="KB Consulting" className="h-8 w-auto object-contain" />
+            <img src="/logo.png" alt="KB Consulting" className={`h-8 w-auto object-contain transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} />
           </button>
           <div className="flex items-center gap-7">
             {navItems.map(n => (
@@ -104,7 +136,7 @@ export default function App() {
       </nav>
 
       {/* HERO */}
-      <section id="hero" className="relative min-h-screen overflow-hidden">
+      <section id="hero" ref={heroRef} className="relative min-h-screen overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-50 to-white pointer-events-none" />
         <div className="absolute inset-0 bg-cover bg-center opacity-[0.04]" style={{ backgroundImage: 'url(/hero-bg.jpg)' }} />
@@ -134,7 +166,12 @@ export default function App() {
 
               <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-6">Inversionista · Emprendedor · Web3</p>
               <div className="flex justify-center lg:justify-start mb-6">
-                <img src="/kevin-signature.png" alt="Kevin Barquero" className="max-w-xs sm:max-w-sm lg:max-w-md h-auto" />
+                <img
+                  ref={signatureRef}
+                  src="/kevin-signature.png"
+                  alt="Kevin Barquero"
+                  className={`max-w-xs sm:max-w-sm lg:max-w-md h-auto transition-opacity duration-300 ${isAnimatingSignature ? 'opacity-0' : 'opacity-100'}`}
+                />
               </div>
               <p className="text-[16px] sm:text-[20px] text-[#6e6e73] leading-relaxed mb-10">
                 Estratega en Web3 y Blockchain enfocado en crecimiento y transformación digital
@@ -358,6 +395,27 @@ export default function App() {
           );
         })}
       </nav>
+
+      {/* ANIMATED SIGNATURE */}
+      {isAnimatingSignature && signaturePosition.width > 0 && (
+        <img
+          src="/kevin-signature.png"
+          alt="Kevin Barquero"
+          style={{
+            position: 'fixed',
+            top: `${signaturePosition.top - scrollY}px`,
+            left: `${signaturePosition.left}px`,
+            width: `${signaturePosition.width}px`,
+            height: `${signaturePosition.height}px`,
+            transform: `translate(${24 - signaturePosition.left}px, ${8 - (signaturePosition.top - scrollY)}px) scale(${32 / signaturePosition.height})`,
+            transformOrigin: 'left top',
+            transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+            zIndex: 40,
+            pointerEvents: 'none',
+          }}
+          className="hidden md:block"
+        />
+      )}
     </div>
   );
 }
