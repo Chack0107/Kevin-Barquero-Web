@@ -115,7 +115,6 @@ export default function App() {
             src="/kevin-hero.png"
             alt="Kevin Barquero"
             className="h-[80%] w-auto object-contain object-bottom"
-            style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 10%)' }}
           />
         </div>
 
@@ -134,11 +133,11 @@ export default function App() {
               </div>
 
               <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-6">Inversionista · Emprendedor · Web3</p>
-              <h1 className="text-[42px] sm:text-[68px] lg:text-[92px] font-bold leading-[1.02] tracking-tight text-[#1d1d1f] mb-6">
-                Kevin<br /><span className="text-[#6e6e73]">Barquero</span>
-              </h1>
+              <div className="flex justify-center lg:justify-start mb-6">
+                <img src="/kevin-signature.png" alt="Kevin Barquero" className="max-w-xs sm:max-w-sm lg:max-w-md h-auto" />
+              </div>
               <p className="text-[16px] sm:text-[20px] text-[#6e6e73] leading-relaxed mb-10">
-                Especialista en Web3, Blockchain y Trading. Ayudando a personas a alcanzar su libertad financiera desde Costa Rica 🇨🇷
+                Estratega en Web3 y Blockchain enfocado en crecimiento y transformación digital
               </p>
               <div className="flex flex-col md:flex-row flex-wrap gap-3 justify-center lg:justify-start mb-12">
                 <button onClick={() => goto('portfolio')} className="inline-flex items-center justify-center gap-2 bg-[#1d1d1f] text-white text-[15px] font-medium px-6 md:px-7 py-4 md:py-3.5 rounded-full hover:bg-[#333] transition-colors">
