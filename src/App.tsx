@@ -78,9 +78,9 @@ export default function App() {
   };
 
   const navItems = [
-    { label: 'Inicio', id: 'hero' },
     { label: 'Sobre Mí', id: 'about' },
     { label: 'Consultoría', id: 'consulting' },
+    { label: 'Inicio', id: 'hero' },
     { label: 'Portafolio', id: 'portfolio' },
     { label: 'Contacto', id: 'contact' },
   ];
@@ -383,6 +383,7 @@ export default function App() {
             portfolio: 'https://www.svgrepo.com/show/166037/dartboard-and-dart.svg',
             contact: 'https://www.svgrepo.com/show/522680/telephone-signal.svg',
           };
+          const isHero = n.id === 'hero';
           return (
             <button
               key={n.id}
@@ -391,8 +392,12 @@ export default function App() {
                 popButton === n.id ? 'animate-button-pop' : ''
               }`}
             >
-              <img src={iconUrls[n.id]} alt={n.label} className="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity" />
-              <span className="text-[10px] font-medium group-hover:text-[#1d1d1f]">{n.label}</span>
+              {isHero ? (
+                <img src="/logo.png" alt={n.label} className="w-7 h-7 opacity-70 group-hover:opacity-100 transition-opacity rounded-full object-cover" />
+              ) : (
+                <img src={iconUrls[n.id]} alt={n.label} className="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity" />
+              )}
+              {!isHero && <span className="text-[10px] font-medium group-hover:text-[#1d1d1f]">{n.label}</span>}
             </button>
           );
         })}
