@@ -152,20 +152,11 @@ export default function App() {
 
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 lg:px-8 min-h-screen flex flex-col justify-center pt-24 md:pt-24 pb-32 md:pb-20">
-          <div className="max-w-xl text-center lg:text-left mx-auto lg:mx-0">
+          <div className="max-w-xl text-center lg:text-left mx-auto lg:mx-0 flex flex-col">
             <FadeSection>
 
-              {/* Foto en móvil — encima del texto, circular */}
-              <div className="flex justify-center lg:hidden mb-6">
-                <img
-                  src="/kevin-hero.png"
-                  alt="Kevin Barquero"
-                  className="w-44 h-44 object-cover object-top rounded-full border-4 border-white shadow-lg"
-                />
-              </div>
-
-              <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-6">Inversionista · Emprendedor · Web3</p>
-              <div className="flex justify-center lg:justify-start mb-6">
+              {/* Signature en móvil — ahora arriba */}
+              <div className="flex justify-center lg:justify-start mb-6 order-first lg:order-none">
                 <img
                   ref={signatureRef}
                   src="/kevin-signature.png"
@@ -173,6 +164,17 @@ export default function App() {
                   className={`max-w-xs sm:max-w-sm lg:max-w-md h-auto transition-opacity duration-300 ${isAnimatingSignature ? 'opacity-0' : 'opacity-100'}`}
                 />
               </div>
+
+              {/* Foto en móvil — ahora abajo */}
+              <div className="flex justify-center lg:hidden mb-6 order-2 lg:order-none">
+                <img
+                  src="/kevin-hero.png"
+                  alt="Kevin Barquero"
+                  className="w-44 h-44 object-cover object-top rounded-full border-4 border-white shadow-lg"
+                />
+              </div>
+
+              <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-6 order-3 lg:order-none">Inversionista · Emprendedor · Web3</p>
               <p className="text-[16px] sm:text-[20px] text-[#6e6e73] leading-relaxed mb-10">
                 Estratega en Web3 y Blockchain enfocado en crecimiento y transformación digital
               </p>
