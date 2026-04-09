@@ -84,13 +84,13 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-[#1d1d1f] font-sans pb-20 md:pb-0">
+    <div className="min-h-screen bg-[#fafafa] text-[#1d1d1f] font-sans pb-20 md:pb-0">
 
       {/* NAV DESKTOP */}
       <nav className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'apple-blur border-b border-gray-200/60' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-14">
           <button onClick={() => goto('hero')} className="flex items-center gap-2.5">
-            <img src="/logo.png" alt="KB" className="h-8 w-8 rounded-full object-cover" />
+            <img src="/logo.png" alt="KB" className="h-8 w-auto object-contain" />
             <span className="font-semibold text-[15px] text-[#1d1d1f]">Kevin Barquero</span>
           </button>
           <div className="flex items-center gap-7">
@@ -171,7 +171,7 @@ export default function App() {
       </section>
 
       {/* STATS */}
-      <section className="border-y border-gray-100 bg-[#f5f5f7] py-8 md:py-10">
+      <section className="border-y border-gray-100 bg-[#efefef] py-8 md:py-10">
         <FadeSection>
           <div className="max-w-4xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
             {stats.map((s, i) => (
@@ -185,7 +185,7 @@ export default function App() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-16 md:py-20 lg:py-36 bg-white">
+      <section id="about" className="py-16 md:py-20 lg:py-36 bg-[#fafafa]">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <FadeSection>
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
@@ -221,7 +221,7 @@ export default function App() {
       </section>
 
       {/* SERVICES */}
-      <section id="consulting" className="py-16 md:py-20 lg:py-36 bg-[#f5f5f7]">
+      <section id="consulting" className="py-16 md:py-20 lg:py-36 bg-[#efefef]">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <FadeSection>
             <div className="text-center mb-8 md:mb-12 lg:mb-16">
@@ -233,7 +233,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s, i) => (
               <FadeSection key={i}>
-                <div className="bg-white rounded-2xl p-6 lg:p-7 hover:shadow-md transition-shadow h-full">
+                <div className="bg-white rounded-2xl p-6 lg:p-7 hover:shadow-md transition-shadow h-full border border-gray-100">
                   <div className="w-11 h-11 rounded-xl bg-[#f5f5f7] flex items-center justify-center text-[#1d1d1f] mb-5">{s.icon}</div>
                   <h3 className="font-semibold text-[16px] lg:text-[17px] text-[#1d1d1f] mb-2">{s.title}</h3>
                   <p className="text-[14px] text-[#6e6e73] leading-relaxed">{s.desc}</p>
@@ -245,7 +245,7 @@ export default function App() {
       </section>
 
       {/* PORTFOLIO */}
-      <section id="portfolio" className="py-16 md:py-20 lg:py-36 bg-white">
+      <section id="portfolio" className="py-16 md:py-20 lg:py-36 bg-[#fafafa]">
         <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <FadeSection>
             <div className="text-center mb-8 md:mb-12 lg:mb-16">
