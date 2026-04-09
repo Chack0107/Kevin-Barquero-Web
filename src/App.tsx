@@ -393,7 +393,7 @@ export default function App() {
               }`}
             >
               {isHero ? (
-                <img src="/logo.png" alt={n.label} className="w-7 h-7 opacity-70 group-hover:opacity-100 transition-opacity rounded-full object-cover" />
+                <img src="/logo.png" alt={n.label} className="w-7 h-7 opacity-70 group-hover:opacity-100 transition-opacity" />
               ) : (
                 <img src={iconUrls[n.id]} alt={n.label} className="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity" />
               )}
