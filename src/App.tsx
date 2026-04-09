@@ -90,7 +90,7 @@ export default function App() {
       <nav className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'apple-blur border-b border-gray-200/60' : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-14">
           <button onClick={() => goto('hero')} className="flex items-center gap-2.5">
-            <img src="https://cdn.builder.io/api/v1/image/assets%2F71592f13a45b44818442d75ffc07da5d%2Facd7313159b341b796077b33ab8e5ba8?format=webp&width=800&height=1200" alt="KB Consulting" className="h-8 w-auto object-contain" />
+            <img src="/logo.png" alt="KB Consulting" className="h-8 w-auto object-contain" />
           </button>
           <div className="flex items-center gap-7">
             {navItems.map(n => (
