@@ -289,7 +289,7 @@ export default function App() {
             <div className="text-center mb-8 md:mb-12 lg:mb-16">
               <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#86868b] mb-4">Contacto</p>
               <h2 className="text-[28px] sm:text-[56px] font-bold tracking-tight leading-[1.05] mb-4">Trabajemos Juntos.</h2>
-              <p className="text-[15px] md:text-[17px] text-[#86868b] max-w-xl mx-auto">¿Tenés un proyecto en mente o querés colaborar? Estoy aquí.</p>
+              <p className="text-[15px] md:text-[17px] text-[#86868b] max-w-xl mx-auto">¿Necesitas infraestructura de pagos, una plataforma educativa, o asesoría estratégica en FinTech/EdTech? Conversemos.</p>
             </div>
           </FadeSection>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
