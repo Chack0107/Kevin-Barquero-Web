@@ -27,43 +27,14 @@ function FadeSection({ children, className = '' }: { children: React.ReactNode; 
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const [popButton, setPopButton] = useState<string | null>(null);
-  const signatureRef = useRef<HTMLImageElement>(null);
-  const heroRef = useRef<HTMLDivElement>(null);
-  const [isAnimatingSignature, setIsAnimatingSignature] = useState(false);
-  const [signaturePosition, setSignaturePosition] = useState({ top: 0, left: 0, width: 0, height: 0 });
 
   useEffect(() => {
     const onScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
-      setScrolled(currentScrollY > 40);
-
-      // Detectar si salimos del hero y animar signature
-      const heroElement = heroRef.current;
-      const signatureElement = signatureRef.current;
-
-      if (heroElement && signatureElement) {
-        const heroBottom = heroElement.offsetHeight;
-        const shouldAnimate = currentScrollY > heroBottom * 0.5;
-        setIsAnimatingSignature(shouldAnimate);
-
-        if (shouldAnimate) {
-          // Calcular la posición actual del signature en el documento
-          const rect = signatureElement.getBoundingClientRect();
-          setSignaturePosition({
-            top: rect.top + currentScrollY,
-            left: rect.left,
-            width: rect.width,
-            height: rect.height,
-          });
-        }
-      }
+      setScrolled(window.scrollY > 40);
     };
 
     window.addEventListener('scroll', onScroll);
-    onScroll(); // Ejecutar una vez al montar
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -136,7 +107,7 @@ export default function App() {
       </nav>
 
       {/* HERO */}
-      <section id="hero" ref={heroRef} className="relative min-h-screen overflow-hidden">
+      <section id="hero" className="relative min-h-screen overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-50 to-white pointer-events-none" />
         <div className="absolute inset-0 bg-cover bg-center opacity-[0.04]" style={{ backgroundImage: 'url(/hero-bg.jpg)' }} />
@@ -158,10 +129,9 @@ export default function App() {
               {/* Signature en móvil — ahora arriba */}
               <div className="flex justify-center lg:justify-start mb-6 order-first lg:order-none">
                 <img
-                  ref={signatureRef}
                   src="/kevin-signature.png"
                   alt="Kevin Barquero"
-                  className={`max-w-xs sm:max-w-sm lg:max-w-md h-auto transition-opacity duration-300 ${isAnimatingSignature ? 'opacity-0' : 'opacity-100'}`}
+                  className="max-w-xs sm:max-w-sm lg:max-w-md h-auto"
                 />
               </div>
 
@@ -393,7 +363,7 @@ export default function App() {
               }`}
             >
               {isHero ? (
-                <img src="/logo.png" alt={n.label} className="w-9 h-9 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <img src="/logo.png" alt={n.label} className="w-9 h-9 opacity-70 group-hover:opacity-100 transition-opacity" />
               ) : (
                 <img src={iconUrls[n.id]} alt={n.label} className="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity" />
               )}
@@ -403,26 +373,6 @@ export default function App() {
         })}
       </nav>
 
-      {/* ANIMATED SIGNATURE */}
-      {isAnimatingSignature && signaturePosition.width > 0 && (
-        <img
-          src="/kevin-signature.png"
-          alt="Kevin Barquero"
-          style={{
-            position: 'fixed',
-            top: `${signaturePosition.top - scrollY}px`,
-            left: `${signaturePosition.left}px`,
-            width: `${signaturePosition.width}px`,
-            height: `${signaturePosition.height}px`,
-            transform: `translate(${24 - signaturePosition.left}px, ${8 - (signaturePosition.top - scrollY)}px) scale(${32 / signaturePosition.height})`,
-            transformOrigin: 'left top',
-            transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-            zIndex: 40,
-            pointerEvents: 'none',
-          }}
-          className="hidden md:block"
-        />
-      )}
     </div>
   );
 }
