@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  Instagram, Youtube, Twitter,
   TrendingUp, Shield, Zap, ArrowRight,
   ExternalLink, Play, Users, Award, BarChart3, ChevronDown,
-  Mail, Linkedin, MessageCircle, Calendar, FileText
+  Mail, Linkedin, MessageCircle, Calendar
 } from 'lucide-react';
 
 function useFadeIn() {
