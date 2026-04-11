@@ -57,12 +57,12 @@ export default function App() {
   ];
 
   const services = [
-    { icon: <TrendingUp size={24} />, title: 'Trading & Inversiones', desc: 'Estrategias de trading técnico y fundamental, análisis de mercado, gestión de riesgo y psicología del trading.' },
-    { icon: <Shield size={24} />, title: 'Web3 & Blockchain', desc: 'Consultoría en adopción de tecnología blockchain, wallets digitales, NFTs y estrategias DeFi.' },
-    { icon: <BarChart3 size={24} />, title: 'Educación Financiera', desc: 'Capacitación en finanzas personales, construcción de patrimonio y libertad financiera.' },
-    { icon: <Zap size={24} />, title: 'Estrategia Digital', desc: 'Desarrollo de estrategias de negocio basadas en tecnología emergente y transformación digital.' },
-    { icon: <Play size={24} />, title: 'Content Creation', desc: 'Producción de contenido educativo sobre cripto, entrevistas con expertos y análisis de mercado.' },
-    { icon: <Users size={24} />, title: 'Mentoría', desc: 'Acompañamiento personalizado para emprendedores que quieren incursionar en el mundo crypto.' },
+    { icon: <TrendingUp size={24} />, title: 'Infraestructura de Pagos', desc: 'Conexión con soluciones de stablecoins, on/off ramps en USD, y acceso a banca internacional para corporaciones y clientes de alto patrimonio.' },
+    { icon: <Shield size={24} />, title: 'Estructuración Corporativa', desc: 'Asesoría en estructuración de entidades en CR, PA y US para acceso a infraestructura financiera sin necesidad de presencia local.' },
+    { icon: <BarChart3 size={24} />, title: 'Plataformas Educativas Enterprise', desc: 'Diseño y desarrollo de plataformas educativas (web, iOS, Android) a medida para instituciones y corporaciones.' },
+    { icon: <Zap size={24} />, title: 'Plataforma SaaS de Educación', desc: 'Solución white-label para creadores, academias e instituciones que quieren lanzar su propia experiencia de educación online.' },
+    { icon: <Play size={24} />, title: 'Automatización de Estrategias', desc: 'Software de automatización para estrategias de TradingView. Herramientas independientes que cada usuario opera por su cuenta.' },
+    { icon: <Users size={24} />, title: 'Consultoría Estratégica', desc: 'Asesoría en modelo de negocio, go-to-market y escalabilidad para empresas en FinTech y EdTech.' },
   ];
 
   const stats = [
@@ -73,10 +73,11 @@ export default function App() {
   ];
 
   const portfolio = [
-    { name: 'Blerify', tag: 'Identidad Digital & Activos', desc: 'Plataforma líder en identidad digital verificable y gestión de activos digitales en Latinoamérica. Credenciales digitales, firmas electrónicas y billeteras universales con blockchain.', chips: ['Blockchain', 'Identidad Digital', 'Web3', 'Fintech'], link: 'https://blerify.com', cta: 'Visitar Sitio' },
-    { name: 'Canal de YouTube', tag: 'Kevin Barquero', desc: 'Más de 80 videos sobre trading, criptomonedas, Web3 y entrevistas con líderes de la industria. Una comunidad creciente de entusiastas del mundo crypto.', chips: ['Educación', 'Trading', 'Entrevistas', 'Crypto'], link: 'https://www.youtube.com/@KEVINFBful', cta: 'Ver Canal' },
-    { name: 'Digital Nomad', tag: 'Estilo de Vida & Comunidad', desc: 'Promoviendo el estilo de vida nómada digital. Desde Bitcoin Jungle en Costa Rica hasta hubs tecnológicos en Panamá.', chips: ['Remote Work', 'Bitcoin', 'Lifestyle', 'Comunidad'], link: 'https://www.instagram.com/kevinbarquero7', cta: 'Seguir en Instagram' },
-    { name: 'Blockchain Community', tag: 'Educación & Networking', desc: 'Participación activa en Blockchain Week Panamá, conectando con líderes de la industria como Ledger, LACChain y otros proyectos innovadores.', chips: ['Events', 'Networking', 'LACChain', 'Ledger'], link: 'https://www.threads.com/@kevinbarquero7', cta: 'Ver en Threads' },
+    { name: 'KB-Consulting', tag: 'FINTECH · CONSULTORÍA', desc: 'Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.', chips: ['Infraestructura de Pago', 'Stablecoins', 'Estructuración Corporativa', 'Plataformas Educativas'], link: '#', cta: 'Visitar Sitio' },
+    { name: 'BBR Tek Panama', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['Custom Platforms', 'Plataformas Educativas', 'Desarrollo', 'Enterprise'], link: '#', cta: 'Ver Más' },
+    { name: 'Bellndesk', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su contenido educativo online.', chips: ['White-Label', 'Educación Online', 'SaaS', 'Monetización'], link: '#', cta: 'Ver Más' },
+    { name: 'K&F Technologies LLC', tag: 'FINTECH · SOFTWARE', desc: 'Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.', chips: ['Automatización', 'TradingView', 'Software', 'Enterprise'], link: '#', cta: 'Ver Más' },
+    { name: 'Textiles Barquero', tag: 'RETAIL · DISEÑO', desc: 'Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.', chips: ['Retail', 'Diseño Custom', 'Cortinas Premium', 'Textiles'], link: '#', cta: 'Ver Más' },
   ];
 
   const socials = [
@@ -144,9 +145,9 @@ export default function App() {
                 />
               </div>
 
-              <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-6 order-3 lg:order-none">Inversionista · Emprendedor · Web3</p>
+              <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-6 order-3 lg:order-none">fintech · edtech · global</p>
               <p className="text-[16px] sm:text-[20px] text-[#6e6e73] leading-relaxed mb-10">
-                Estratega en Web3 y Blockchain enfocado en crecimiento y transformación digital
+                Construyo y opero empresas de tecnología financiera y educativa. Conecto HNWIs y corporaciones con la infraestructura de pagos que necesitan.
               </p>
               <div className="flex flex-col md:flex-row flex-wrap gap-3 justify-center lg:justify-start mb-12">
                 <button onClick={() => goto('portfolio')} className="inline-flex items-center justify-center gap-2 bg-[#1d1d1f] text-white text-[15px] font-medium px-6 md:px-7 py-4 md:py-3.5 rounded-full hover:bg-[#333] transition-colors">
@@ -199,12 +200,11 @@ export default function App() {
               <div>
                 <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4 flex items-center gap-2 justify-center lg:justify-start"><Award size={14} /> Sobre Mí</p>
                 <h2 className="text-[28px] sm:text-[48px] font-bold tracking-tight leading-[1.1] mb-7 text-[#1d1d1f] text-center lg:text-left">
-                  Inversionista &<br />Emprendedor Digital.
+                  Operador FinTech &<br />EdTech.
                 </h2>
                 <div className="space-y-4 text-[15px] md:text-[16px] text-[#6e6e73] leading-relaxed text-center lg:text-left">
-                  <p>Soy <strong className="text-[#1d1d1f]">Kevin A. Barquero</strong>, apasionado del mundo digital, las inversiones y la tecnología blockchain. Nacido en <strong className="text-[#1d1d1f]">Costa Rica</strong> 🇨🇷 y actualmente en <strong className="text-[#1d1d1f]">Panamá</strong> 🇵🇦.</p>
-                  <p>Como creador de contenido en <strong className="text-[#1d1d1f]">YouTube</strong>, comparto conocimientos sobre trading, criptomonedas, Web3 y estrategias de inversión para empoderar la libertad financiera.</p>
-                  <p>Estoy <strong className="text-[#1d1d1f]">obsessed with success</strong> y creo que cada persona debería dedicarse a lo que realmente le apasiona.</p>
+                  <p>Soy <strong className="text-[#1d1d1f]">Kevin A. Barquero</strong>. Fundador y operador de empresas en tecnología financiera y educativa con operaciones en Costa Rica, Panamá y Estados Unidos. Desde KB-Consulting conecto HNWIs y corporaciones con soluciones de infraestructura de pagos y activos digitales. Desde BBR Tek y Bellndesk construyo plataformas educativas para instituciones y creadores.</p>
+                  <p>Mi enfoque es simple: identificar problemas reales en pagos y educación, construir soluciones que funcionen, y conectar a las personas correctas con la infraestructura correcta. No gestiono capital. No doy consejos financieros. Construyo y opero.</p>
                 </div>
               </div>
               <div className="relative flex flex-col items-center">
@@ -234,7 +234,7 @@ export default function App() {
             <div className="text-center mb-8 md:mb-12 lg:mb-16">
               <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4">Consultoría</p>
               <h2 className="text-[28px] sm:text-[48px] font-bold tracking-tight leading-[1.1] text-[#1d1d1f] mb-4">Servicios.</h2>
-              <p className="text-[15px] md:text-[17px] text-[#6e6e73] max-w-xl mx-auto">Navega el mundo de las criptomonedas, blockchain e inversiones digitales con guía experta.</p>
+              <p className="text-[15px] md:text-[17px] text-[#6e6e73] max-w-xl mx-auto">Soluciones que operamos. No teoría — infraestructura real.</p>
             </div>
           </FadeSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -258,7 +258,7 @@ export default function App() {
             <div className="text-center mb-8 md:mb-12 lg:mb-16">
               <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4">Portafolio</p>
               <h2 className="text-[28px] sm:text-[48px] font-bold tracking-tight leading-[1.1] text-[#1d1d1f] mb-4">Empresas & Proyectos.</h2>
-              <p className="text-[15px] md:text-[17px] text-[#6e6e73] max-w-xl mx-auto">Proyectos innovadores en el ecosistema blockchain y fintech de Latinoamérica.</p>
+              <p className="text-[15px] md:text-[17px] text-[#6e6e73] max-w-xl mx-auto">Empresas que construyo y opero en FinTech y EdTech.</p>
             </div>
           </FadeSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
