@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  Menu, X, Instagram, Youtube, Twitter,
-  Globe, TrendingUp, Shield, Zap, ArrowRight, Mail,
+  Menu, X, Instagram, Youtube, Twitter, TrendingUp, Shield, Zap, ArrowRight,
   ExternalLink, Play, Users, Award, BarChart3, ChevronDown
 } from 'lucide-react';
 
