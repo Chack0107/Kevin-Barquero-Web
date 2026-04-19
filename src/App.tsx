@@ -20,7 +20,7 @@ function useFadeIn() {
 }
 
 function FadeSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const ref = useFadeIn();
+  const ref = useFadeIn()
   return <div ref={ref} className={`section-fade ${className}`}>{children}</div>;
 }
 
