@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  Instagram, Youtube, Twitter,
   TrendingUp, Shield, Zap, ArrowRight,
-  ExternalLink, Play, Users, Award, BarChart3, ChevronDown
+  ExternalLink, Play, Users, Award, BarChart3, ChevronDown,
+  Mail, Linkedin, MessageCircle, Calendar
 } from 'lucide-react';
 
 function useFadeIn() {
@@ -73,18 +73,16 @@ export default function App() {
   ];
 
   const portfolio = [
-    { name: 'KB-Consulting', tag: 'FINTECH · CONSULTORÍA', desc: 'Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.', chips: ['Infraestructura de Pago', 'Stablecoins', 'Estructuración Corporativa', 'Plataformas Educativas'], link: '#', cta: 'Visitar Sitio' },
-    { name: 'BBR Tek Panama', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['Custom Platforms', 'Plataformas Educativas', 'Desarrollo', 'Enterprise'], link: '#', cta: 'Ver Más' },
-    { name: 'Bellndesk', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su contenido educativo online.', chips: ['White-Label', 'Educación Online', 'SaaS', 'Monetización'], link: '#', cta: 'Ver Más' },
-    { name: 'K&F Technologies LLC', tag: 'FINTECH · SOFTWARE', desc: 'Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.', chips: ['Automatización', 'TradingView', 'Software', 'Enterprise'], link: '#', cta: 'Ver Más' },
-    { name: 'Textiles Barquero', tag: 'RETAIL · DISEÑO', desc: 'Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.', chips: ['Retail', 'Diseño Custom', 'Cortinas Premium', 'Textiles'], link: '#', cta: 'Ver Más' },
+    { name: 'KB-Consulting', tag: 'FINTECH · CONSULTORÍA', desc: 'Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.', chips: ['Infraestructura de Pagos', 'Stablecoins', 'Estructuración Corporativa'], link: '#', cta: 'Visitar Sitio' },
+    { name: 'BBR Tek Panama', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: '#', cta: 'Ver Más' },
+    { name: 'Bellndesk', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.', chips: ['Saas', 'White-Label', 'Educación Online'], link: '#', cta: 'Ver Más' },
+    { name: 'K&F Technologies LLC', tag: 'FINTECH · SOFTWARE', desc: 'Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.', chips: ['Automatización', 'TradingView', 'EdTech', 'Enterprise'], link: '#', cta: 'Ver Más' },
   ];
 
   const socials = [
-    { icon: <Youtube size={20} />, label: 'YouTube', handle: '@KEVINFBful', href: 'https://www.youtube.com/@KEVINFBful' },
-    { icon: <Instagram size={20} />, label: 'Instagram', handle: '@kevinbarquero7', href: 'https://www.instagram.com/kevinbarquero7' },
-    { icon: <Twitter size={20} />, label: 'Threads', handle: '@kevinbarquero7', href: 'https://www.threads.com/@kevinbarquero7' },
-    { icon: <ExternalLink size={20} />, label: 'Linktree', handle: 'Todos mis links', href: 'https://linktr.ee/kevinbarquerocrypto' },
+    { icon: <Mail size={20} />, label: 'Email', handle: 'contact@kevinbarquero.com', href: 'mailto:contact@kevinbarquero.com' },
+    { icon: <Linkedin size={20} />, label: 'LinkedIn', handle: 'Kevin Barquero', href: 'https://www.linkedin.com/in/kevinbarquero' },
+    { icon: <MessageCircle size={20} />, label: 'WhatsApp Business', handle: 'Para clientes LATAM', href: 'https://wa.me/50600000000' },
   ];
 
   return (
@@ -159,10 +157,9 @@ export default function App() {
               </div>
               <div className="flex gap-4 justify-center lg:justify-start">
                 {[
-                  { icon: <Youtube size={18} />, href: 'https://www.youtube.com/@KEVINFBful' },
-                  { icon: <Instagram size={18} />, href: 'https://www.instagram.com/kevinbarquero7' },
-                  { icon: <Twitter size={18} />, href: 'https://www.threads.com/@kevinbarquero7' },
-                  { icon: <ExternalLink size={18} />, href: 'https://linktr.ee/kevinbarquerocrypto' },
+                  { icon: <Mail size={18} />, href: 'mailto:contact@kevinbarquero.com' },
+                  { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/kevinbarquero' },
+                  { icon: <MessageCircle size={18} />, href: 'https://wa.me/50600000000' },
                 ].map((s, i) => (
                   <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/80 border border-gray-200 flex items-center justify-center text-[#6e6e73] hover:bg-gray-100 hover:text-[#1d1d1f] transition-all">
                     {s.icon}
@@ -290,7 +287,7 @@ export default function App() {
             <div className="text-center mb-8 md:mb-12 lg:mb-16">
               <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#86868b] mb-4">Contacto</p>
               <h2 className="text-[28px] sm:text-[56px] font-bold tracking-tight leading-[1.05] mb-4">Trabajemos Juntos.</h2>
-              <p className="text-[15px] md:text-[17px] text-[#86868b] max-w-xl mx-auto">¿Tenés un proyecto en mente o querés colaborar? Estoy aquí.</p>
+              <p className="text-[15px] md:text-[17px] text-[#86868b] max-w-xl mx-auto">¿Necesitas infraestructura de pagos, una plataforma educativa, o asesoría estratégica en FinTech/EdTech? Conversemos.</p>
             </div>
           </FadeSection>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
@@ -310,17 +307,39 @@ export default function App() {
               </div>
             </FadeSection>
             <FadeSection>
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10 text-center">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center mx-auto mb-6">
-                  <Zap className="text-[#1d1d1f]" size={30} />
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10">
+                <h3 className="text-[22px] lg:text-[24px] font-bold mb-2">Formulario de Contacto</h3>
+                <p className="text-[14px] text-[#86868b] mb-6">Cuéntame sobre tu proyecto y te respondo en menos de 24h.</p>
+                <div className="space-y-4">
+                  <input
+                    type="text"
+                    placeholder="Tu nombre"
+                    className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-[14px] text-white placeholder-[#6e6e73] focus:outline-none focus:border-white/30 transition-colors"
+                  />
+                  <input
+                    type="email"
+                    placeholder="tu@email.com"
+                    className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-[14px] text-white placeholder-[#6e6e73] focus:outline-none focus:border-white/30 transition-colors"
+                  />
+                  <textarea
+                    rows={4}
+                    placeholder="¿En qué puedo ayudarte?"
+                    className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-[14px] text-white placeholder-[#6e6e73] focus:outline-none focus:border-white/30 transition-colors resize-none"
+                  />
+                  <button
+                    onClick={() => window.location.href = 'mailto:contact@kevinbarquero.com'}
+                    className="w-full bg-white text-[#1d1d1f] font-semibold py-4 md:py-3.5 rounded-full hover:bg-gray-100 transition-colors text-[15px]">
+                    Enviar Mensaje
+                  </button>
                 </div>
-                <h3 className="text-[22px] lg:text-[24px] font-bold mb-3">¿Listo para Empezar?</h3>
-                <p className="text-[14px] lg:text-[15px] text-[#86868b] leading-relaxed mb-8">Ya sea consultoría, colaboración o simplemente charlar sobre Web3 y cripto — no dudes en escribirme.</p>
-                <button onClick={() => window.open('https://linktr.ee/kevinbarquerocrypto', '_blank')}
-                  className="w-full bg-white text-[#1d1d1f] font-semibold py-4 md:py-3.5 rounded-full hover:bg-gray-100 transition-colors text-[15px]">
-                  Ver todos mis links
-                </button>
-                <p className="mt-5 text-[12px] text-[#6e6e73]">⚠️ I DON'T DM FOR MONEY · Beware of Scams</p>
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <button
+                    onClick={() => window.open('https://calendly.com/kevinbarquero', '_blank')}
+                    className="w-full flex items-center justify-center gap-2 border border-white/20 text-white font-medium py-3 rounded-full hover:bg-white/10 transition-colors text-[14px]">
+                    <Calendar size={16} />
+                    Agendar llamada de 15 min
+                  </button>
+                </div>
               </div>
             </FadeSection>
           </div>
