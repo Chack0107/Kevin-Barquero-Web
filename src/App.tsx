@@ -79,7 +79,7 @@ export default function App() {
     { icon: <BarChart3 size={24} />, title: 'Plataformas Educativas Enterprise', desc: 'Diseño y desarrollo de plataformas educativas (web, iOS, Android) a medida para instituciones y corporaciones.' },
     { icon: <Zap size={24} />, title: 'Plataforma SaaS de Educación', desc: 'Solución white-label para creadores, academias e instituciones que quieren lanzar su propia experiencia de educación online.' },
     { icon: <Play size={24} />, title: 'Automatización de Estrategias', desc: 'Software de automatización para estrategias de TradingView. Herramientas independientes que cada usuario opera por su cuenta.' },
-    { icon: <Users size={24} />, title: 'Consultoría Estratégica', desc: 'Asesoría en modelo de negocio, go-to-market y escalabilidad para empresas en FinTech y EdTech.' },
+    { icon: <Users size={24} />, title: 'Consultoría Estratégicas', desc: 'Asesoría en modelo de negocio, go-to-market y escalabilidad para empresas en FinTech y EdTech.' },
   ];
 
   const stats = [
