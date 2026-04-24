@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  TrendingUp, Shield, Zap, ArrowRight,
-  ExternalLink, Play, Users, Award, BarChart3, ChevronDown,
+  TrendingUp, Shield, Zap, ArrowRight, Play, Users, Award, BarChart3, ChevronDown,
   Mail, Linkedin, MessageCircle, Calendar
 } from 'lucide-react';
 
