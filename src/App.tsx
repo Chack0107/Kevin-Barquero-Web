@@ -73,11 +73,11 @@ export default function App() {
   ];
 
   const portfolio = [
-    { name: 'KB-Consulting', tag: 'FINTECH · CONSULTORÍA', desc: 'Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.', chips: ['Infraestructura de Pagos', 'Stablecoins', 'Estructuración Corporativa'], link: '#', cta: 'Visitar Sitio' },
-    { name: 'BBR Tek Panama', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://bbrtek.com/', cta: 'Ver Más' },
-    { name: 'Bellndesk', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.', chips: ['Saas', 'White-Label', 'Educación Online'], link: 'https://bellndesk.com/', cta: 'Ver Más' },
-    { name: 'K&F Technologies LLC', tag: 'FINTECH · SOFTWARE', desc: 'Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.', chips: ['Automatización', 'TradingView', 'EdTech', 'Enterprise'], link: '#', cta: 'Ver Más' },
-    { name: 'Textiles Barquero', tag: 'RETAIL · DISEÑO', desc: 'Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.', chips: ['Textiles', 'Diseño Custom', 'Cortinas Premium'], link: '#', cta: 'Ver Más' },
+    { name: 'KB-Consulting', logo: '/logo-kb-consulting.png', tag: 'FINTECH · CONSULTORÍA', desc: 'Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.', chips: ['Infraestructura de Pagos', 'Stablecoins', 'Estructuración Corporativa'], link: '#', cta: 'Visitar Sitio' },
+    { name: 'BBR Tek Panama', logo: '/logo-bbr-tek.png', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://bbrtek.com/'},
+    { name: 'Bellndesk', logo: '/logo-bell-n-desk.png', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.', chips: ['Saas', 'White-Label', 'Educación Online'], link: 'https://bellndesk.com/', cta: 'Ver Más' },
+    { name: 'K&F Technologies LLC', logo: '/logo-kf-tech.png', tag: 'FINTECH · SOFTWARE', desc: 'Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.', chips: ['Automatización', 'TradingView', 'EdTech', 'Enterprise'], link: '#',},
+    { name: 'Textiles Barquero', logo: null, tag: 'RETAIL · DISEÑO', desc: 'Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.', chips: ['Textiles', 'Diseño Custom', 'Cortinas Premium'], link: '#', cta: 'Ver Más' },
   ];
 
   const socials = [
@@ -264,16 +264,28 @@ export default function App() {
               <FadeSection key={i}>
                 <div className="bg-[#f5f5f7] rounded-2xl p-6 lg:p-8 hover:bg-[#ebebed] transition-colors h-full flex flex-col">
                   <p className="text-[11px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-2">{p.tag}</p>
-                  <h3 className="text-[22px] lg:text-[24px] font-bold text-[#1d1d1f] mb-4">{p.name}</h3>
+                  <a
+                    href={p.link}
+                    target={p.link !== '#' ? '_blank' : '_self'}
+                    rel="noopener noreferrer"
+                    className="block mb-4"
+                  >
+                    {p.logo ? (
+                      <img
+                        src={p.logo}
+                        alt={p.name}
+                        className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                      />
+                    ) : (
+                      <h3 className="text-[22px] lg:text-[24px] font-bold text-[#1d1d1f] hover:underline">{p.name}</h3>
+                    )}
+                  </a>
                   <p className="text-[14px] lg:text-[15px] text-[#6e6e73] leading-relaxed mb-6 flex-1">{p.desc}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {p.chips.map((c, j) => (
                       <span key={j} className="px-3 py-1 rounded-full bg-white text-[#1d1d1f] text-[12px] font-medium border border-gray-200">{c}</span>
                     ))}
                   </div>
-                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[#1d1d1f] text-[14px] font-medium hover:underline">
-                    {p.cta} <ExternalLink size={14} />
-                  </a>
                 </div>
               </FadeSection>
             ))}
