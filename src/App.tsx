@@ -73,10 +73,10 @@ export default function App() {
 
   const portfolio = [
     { name: 'KB-Consulting', logo: '/logo-kb-consulting.png', tag: 'FINTECH · CONSULTORÍA', desc: 'Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.', chips: ['Infraestructura de Pagos', 'Stablecoins', 'Estructuración Corporativa'], link: '#', cta: 'Visitar Sitio' },
-    { name: 'BBR Tek Panama', logo: '/logo-bbr-tek.png', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://bbrtek.com/'},
-    { name: 'Bellndesk', logo: '/logo-bell-n-desk.png', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.', chips: ['Saas', 'White-Label', 'Educación Online'], link: 'https://bellndesk.com/', cta: 'Ver Más' },
     { name: 'K&F Technologies LLC', logo: '/logo-kf-tech.png', tag: 'FINTECH · SOFTWARE', desc: 'Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.', chips: ['Automatización', 'TradingView', 'EdTech', 'Enterprise'], link: '#',},
+    { name: 'Bellndesk', logo: '/logo-bell-n-desk.png', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.', chips: ['Saas', 'White-Label', 'Educación Online'], link: 'https://bellndesk.com/', cta: 'Ver Más' },
     { name: 'Textiles Barquero', logo: null, tag: 'RETAIL · DISEÑO', desc: 'Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.', chips: ['Textiles', 'Diseño Custom', 'Cortinas Premium'], link: '#', cta: 'Ver Más' },
+    { name: 'BBR Tek Panama', logo: '/logo-bbr-tek.png', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://bbrtek.com/'},
   ];
 
   const socials = [
