@@ -77,6 +77,7 @@ export default function App() {
     { name: 'Bellndesk', logo: '/logo-bell-n-desk.png', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.', chips: ['Saas', 'White-Label', 'Educación Online'], link: 'https://bellndesk.com/', cta: 'Ver Más' },
     { name: 'Textiles Barquero', logo: '/logo-tienda-hazel.png', tag: 'RETAIL · DISEÑO', desc: 'Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.', chips: ['Textiles', 'Diseño Custom', 'Cortinas Premium'], link: '#', cta: 'Ver Más' },
     { name: 'BBR Tek Panama', logo: '/logo-bbr-tek.png', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://bbrtek.com/'},
+    { name: 'Blockchain Jungle', logo: '/logo-blockchain-jungle.png', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://www.blockchainjungle.xyz/'},
   ];
 
   const socials = [
