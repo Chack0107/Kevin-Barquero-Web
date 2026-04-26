@@ -64,11 +64,8 @@ export default function App() {
 
   const services = [
     { icon: <TrendingUp size={24} />, title: t('service1_title'), desc: t('service1_desc') },
-    { icon: <Shield size={24} />, title: t('service2_title'), desc: t('service2_desc') },
-    { icon: <BarChart3 size={24} />, title: t('service3_title'), desc: t('service3_desc') },
-    { icon: <Zap size={24} />, title: t('service4_title'), desc: t('service4_desc') },
-    { icon: <Play size={24} />, title: t('service5_title'), desc: t('service5_desc') },
-    { icon: <Users size={24} />, title: t('service6_title'), desc: t('service6_desc') },
+    { icon: <BarChart3 size={24} />, title: t('service2_title'), desc: t('service2_desc') },
+    { icon: <Play size={24} />, title: t('service3_title'), desc: t('service3_desc') },
   ];
 
   const stats = [
@@ -210,12 +207,14 @@ const portfolio = [
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
               <div>
                 <p className="text-[11px] md:text-[12px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4 flex items-center gap-2 justify-center lg:justify-start"><Award size={14} /> {t('about_tag')}</p>
-                <h2 className="text-[28px] sm:text-[48px] font-bold tracking-tight leading-[1.1] mb-7 text-[#1d1d1f] text-center lg:text-left" style={{ whiteSpace: 'pre-line' }}>
+                <h2 className="text-[28px] sm:text-[48px] font-bold tracking-tight leading-[1.1] mb-7 text-[#1d1d1f] text-center lg:text-left">
                   {t('about_title')}
                 </h2>
                 <div className="space-y-4 text-[15px] md:text-[16px] text-[#6e6e73] leading-relaxed text-center lg:text-left">
                   <p dangerouslySetInnerHTML={{ __html: t('about_p1') }} />
                   <p>{t('about_p2')}</p>
+                  <p>{t('about_p3')}</p>
+                  <p>{t('about_p4')}</p>
                 </div>
               </div>
               <div className="relative flex flex-col items-center">
@@ -244,7 +243,7 @@ const portfolio = [
               <p className="text-[15px] md:text-[17px] text-[#6e6e73] max-w-xl mx-auto">{t('consulting_subtitle')}</p>
             </div>
           </FadeSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {services.map((s, i) => (
               <FadeSection key={i}>
                 <div className="bg-white rounded-2xl p-6 lg:p-7 hover:shadow-md transition-shadow h-full border border-gray-100">
@@ -395,6 +394,31 @@ const portfolio = [
             </button>
           );
         })}
+
+        {/* Botón de idioma mobile */}
+        <div className="relative flex flex-col items-center justify-center flex-1 h-full">
+          <button
+            onClick={() => setLangOpen(!langOpen)}
+            className="flex flex-col items-center justify-center gap-1 text-[#6e6e73] hover:text-[#1d1d1f] transition-colors"
+          >
+            <span className="text-xl">{currentLang.flag}</span>
+            <span className="text-[10px] font-medium">{currentLang.label}</span>
+          </button>
+          {langOpen && (
+            <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden z-50">
+              {LANGS.map(lng => (
+                <button
+                  key={lng.code}
+                  onClick={() => { i18n.changeLanguage(lng.code); setLangOpen(false); }}
+                  className={`flex items-center gap-2 w-full px-4 py-2.5 text-[13px] hover:bg-gray-50 transition-colors ${i18n.language === lng.code ? 'font-semibold text-[#1d1d1f]' : 'text-[#6e6e73]'}`}
+                >
+                  <span>{lng.flag}</span>
+                  <span>{lng.label}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </nav>
 
     </div>
