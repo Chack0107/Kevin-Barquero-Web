@@ -77,15 +77,14 @@ export default function App() {
     { value: '5K+', label: t('stats_followers') },
     { value: '5+', label: t('stats_experience') },
   ];
-
-  const portfolio = [
-    { name: 'KB-Consulting', logo: '/logo-kb-consulting.png', logoHeight: '40px', tag: 'FINTECH · CONSULTORÍA', desc: 'Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.', chips: ['Infraestructura de Pagos', 'Stablecoins', 'Estructuración Corporativa'], link: '#' },
-    { name: 'K&F Technologies LLC', logo: '/logo-kf-tech.png', logoHeight: '40px', tag: 'FINTECH · SOFTWARE', desc: 'Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.', chips: ['Automatización', 'TradingView', 'EdTech', 'Enterprise'], link: '#' },
-    { name: 'Bellndesk', logo: '/logo-bell-n-desk.png', logoHeight: '40px', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.', chips: ['Saas', 'White-Label', 'Educación Online'], link: 'https://bellndesk.com/' },
-    { name: 'Textiles Barquero', logo: '/logo-tienda-hazel.png', logoHeight: '100px', tag: 'RETAIL · DISEÑO', desc: 'Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.', chips: ['Textiles', 'Diseño Custom', 'Cortinas Premium'], link: '#' },
-    { name: 'BBR Tek Panama', logo: '/logo-bbr-tek.png', logoHeight: '40px', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://bbrtek.com/' },
-    { name: 'Blockchain Jungle', logo: '/logo-blockchain-jungle.png', logoHeight: '100px', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://www.blockchainjungle.xyz/' },
-  ];
+const portfolio = [
+  { name: 'KB-Consulting', logo: '/logo-kb-consulting.png', logoHeight: '40px', tag: t('p1_tag'), desc: t('p1_desc'), chips: t('p1_chips', { returnObjects: true }) as string[], link: '#' },
+  { name: 'K&F Technologies LLC', logo: '/logo-kf-tech.png', logoHeight: '40px', tag: t('p2_tag'), desc: t('p2_desc'), chips: t('p2_chips', { returnObjects: true }) as string[], link: '#' },
+  { name: 'Bellndesk', logo: '/logo-bell-n-desk.png', logoHeight: '40px', tag: t('p3_tag'), desc: t('p3_desc'), chips: t('p3_chips', { returnObjects: true }) as string[], link: 'https://bellndesk.com/' },
+  { name: 'Textiles Barquero', logo: '/logo-tienda-hazel.png', logoHeight: '100px', tag: t('p4_tag'), desc: t('p4_desc'), chips: t('p4_chips', { returnObjects: true }) as string[], link: '#' },
+  { name: 'BBR Tek Panama', logo: '/logo-bbr-tek.png', logoHeight: '40px', tag: t('p5_tag'), desc: t('p5_desc'), chips: t('p5_chips', { returnObjects: true }) as string[], link: 'https://bbrtek.com/' },
+  { name: 'Blockchain Jungle', logo: '/logo-blockchain-jungle.png', logoHeight: '100px', tag: t('p6_tag'), desc: t('p6_desc'), chips: t('p6_chips', { returnObjects: true }) as string[], link: 'https://www.blockchainjungle.xyz/' },
+];
 
   const socials = [
     { icon: <Mail size={20} />, label: 'Email', handle: 'contact@kevinbarquero.com', href: 'mailto:contact@kevinbarquero.com' },

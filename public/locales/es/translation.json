@@ -5,27 +5,22 @@
   "nav_portfolio": "Portafolio",
   "nav_contact": "Contacto",
   "nav_cta": "Contactar",
-
   "hero_tag": "fintech · edtech · global",
   "hero_desc": "Construyo y opero empresas de tecnología financiera y educativa. Conecto HNWIs y corporaciones con la infraestructura de pagos que necesitan.",
   "hero_btn_portfolio": "Ver Portafolio",
   "hero_btn_about": "Conóceme Más",
-
   "stats_subscribers": "Suscriptores",
   "stats_videos": "Videos",
   "stats_followers": "Seguidores",
   "stats_experience": "Años Exp.",
-
   "about_tag": "Sobre Mí",
   "about_title": "Operador FinTech &\nEdTech.",
-  "about_p1": "Soy <strong>Kevin A. Barquero</strong>. Fundador y operador de empresas en tecnología financiera y educativa con operaciones en Costa Rica, Panamá y Estados Unidos. Desde KB-Consulting conecto HNWIs y corporaciones con soluciones de infraestructura de pagos y activos digitales. Desde BBR Tek y Bellndesk construyo plataformas educativas para instituciones y creadores.",
+  "about_p1": "Soy <strong>Kevin A. Barquero</strong>. Fundador y operador de empresas en tecnología financiera y educativa con operaciones en Costa Rica, Panamá y Estados Unidos.",
   "about_p2": "Mi enfoque es simple: identificar problemas reales en pagos y educación, construir soluciones que funcionen, y conectar a las personas correctas con la infraestructura correcta. No gestiono capital. No doy consejos financieros. Construyo y opero.",
   "about_badge": "Inversionista · Web3 · Panamá 🇵🇦",
-
   "consulting_tag": "Consultoría",
   "consulting_title": "Servicios.",
   "consulting_subtitle": "Soluciones que operamos. No teoría — infraestructura real.",
-
   "service1_title": "Infraestructura de Pagos",
   "service1_desc": "Conexión con soluciones de stablecoins, on/off ramps en USD, y acceso a banca internacional para corporaciones y clientes de alto patrimonio.",
   "service2_title": "Estructuración Corporativa",
@@ -38,11 +33,27 @@
   "service5_desc": "Software de automatización para estrategias de TradingView. Herramientas independientes que cada usuario opera por su cuenta.",
   "service6_title": "Consultoría Estratégica",
   "service6_desc": "Asesoría en modelo de negocio, go-to-market y escalabilidad para empresas en FinTech y EdTech.",
-
   "portfolio_tag": "Portafolio",
   "portfolio_title": "Empresas & Proyectos.",
   "portfolio_subtitle": "Empresas que construyo y opero en FinTech y EdTech.",
-
+  "p1_tag": "FINTECH · CONSULTORÍA",
+  "p1_desc": "Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.",
+  "p1_chips": ["Infraestructura de Pagos", "Stablecoins", "Estructuración Corporativa"],
+  "p2_tag": "FINTECH · SOFTWARE",
+  "p2_desc": "Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.",
+  "p2_chips": ["Automatización", "TradingView", "EdTech", "Enterprise"],
+  "p3_tag": "EDTECH · SAAS",
+  "p3_desc": "Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.",
+  "p3_chips": ["SaaS", "White-Label", "Educación Online"],
+  "p4_tag": "RETAIL · DISEÑO",
+  "p4_desc": "Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.",
+  "p4_chips": ["Textiles", "Diseño Custom", "Cortinas Premium"],
+  "p5_tag": "EDTECH · ENTERPRISE",
+  "p5_desc": "Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.",
+  "p5_chips": ["EdTech", "Desarrollo Custom", "Plataformas Educativas"],
+  "p6_tag": "EDTECH · ENTERPRISE",
+  "p6_desc": "Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.",
+  "p6_chips": ["EdTech", "Desarrollo Custom", "Plataformas Educativas"],
   "contact_tag": "Contacto",
   "contact_title": "Trabajemos Juntos.",
   "contact_subtitle": "¿Necesitas infraestructura de pagos, una plataforma educativa, o asesoría estratégica en FinTech/EdTech? Conversemos.",
@@ -53,8 +64,6 @@
   "contact_form_message": "¿En qué puedo ayudarte?",
   "contact_form_send": "Enviar Mensaje",
   "contact_form_calendar": "Agendar llamada de 15 min",
-
   "social_whatsapp": "Para clientes LATAM",
-
   "footer_copyright": "© 2026 Kevin Barquero."
 }
