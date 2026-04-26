@@ -72,12 +72,12 @@ export default function App() {
   ];
 
   const portfolio = [
-    { name: 'KB-Consulting', logo: '/logo-kb-consulting.png', tag: 'FINTECH · CONSULTORÍA', desc: 'Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.', chips: ['Infraestructura de Pagos', 'Stablecoins', 'Estructuración Corporativa'], link: '#', cta: 'Visitar Sitio' },
-    { name: 'K&F Technologies LLC', logo: '/logo-kf-tech.png', tag: 'FINTECH · SOFTWARE', desc: 'Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.', chips: ['Automatización', 'TradingView', 'EdTech', 'Enterprise'], link: '#',},
-    { name: 'Bellndesk', logo: '/logo-bell-n-desk.png', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.', chips: ['Saas', 'White-Label', 'Educación Online'], link: 'https://bellndesk.com/', cta: 'Ver Más' },
-    { name: 'Textiles Barquero', logo: '/logo-tienda-hazel.png', tag: 'RETAIL · DISEÑO', desc: 'Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.', chips: ['Textiles', 'Diseño Custom', 'Cortinas Premium'], link: '#', cta: 'Ver Más' },
-    { name: 'BBR Tek Panama', logo: '/logo-bbr-tek.png', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://bbrtek.com/'},
-    { name: 'Blockchain Jungle', logo: '/logo-blockchain-jungle.png', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://www.blockchainjungle.xyz/'},
+    { name: 'KB-Consulting', logo: '/logo-kb-consulting.png', logoHeight: '40px', tag: 'FINTECH · CONSULTORÍA', desc: 'Consultoría en infraestructura de pagos digitales y estructuración corporativa para HNWIs y corporaciones. CR / PA / US.', chips: ['Infraestructura de Pagos', 'Stablecoins', 'Estructuración Corporativa'], link: '#', cta: 'Visitar Sitio' },
+    { name: 'K&F Technologies LLC', logo: '/logo-kf-tech.png', logoHeight: '40px', tag: 'FINTECH · SOFTWARE', desc: 'Desarrollo EdTech enterprise para el mercado US + software de automatización de estrategias para TradingView.', chips: ['Automatización', 'TradingView', 'EdTech', 'Enterprise'], link: '#',},
+    { name: 'Bellndesk', logo: '/logo-bell-n-desk.png', logoHeight: '40px', tag: 'EDTECH · SAAS', desc: 'Plataforma SaaS white-label para creadores, academias e instituciones que quieren monetizar su conocimiento online.', chips: ['Saas', 'White-Label', 'Educación Online'], link: 'https://bellndesk.com/', cta: 'Ver Más' },
+    { name: 'Textiles Barquero', logo: '/Transparent.png', logoHeight: '100px', tag: 'RETAIL · DISEÑO', desc: 'Tienda de telas especializadas y servicio premium de diseño de cortinas a medida en el sur de Costa Rica.', chips: ['Textiles', 'Diseño Custom', 'Cortinas Premium'], link: '#', cta: 'Ver Más' },
+    { name: 'BBR Tek Panama', logo: '/logo-bbr-tek.png', logoHeight: '40px', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://bbrtek.com/'},
+    { name: 'Blockchain Jungle', logo: '/Capa.png', logoHeight: '100px', tag: 'EDTECH · ENTERPRISE', desc: 'Plataformas educativas enterprise a medida (web, iOS, Android) para instituciones y corporaciones en Latinoamérica.', chips: ['EdTech', 'Desarrollo Custom', 'Plataformas Educativas'], link: 'https://www.blockchainjungle.xyz/'},
   ];
 
   const socials = [
@@ -271,10 +271,11 @@ export default function App() {
                     className="block mb-4"
                   >
                     {p.logo ? (
-                      <img
-                        src={p.logo}
-                        alt={p.name}
-                        className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+<img
+  src={p.logo}
+  alt={p.name}
+  style={{ height: p.logoHeight, width: 'auto' }}
+  className="object-contain opacity-80 hover:opacity-100 transition-opacity"
                       />
                     ) : (
                       <h3 className="text-[22px] lg:text-[24px] font-bold text-[#1d1d1f] hover:underline">{p.name}</h3>
