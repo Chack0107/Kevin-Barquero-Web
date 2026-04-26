@@ -72,10 +72,10 @@ export default function App() {
   ];
 
   const stats = [
-    { value: '3.6K+', label: t('stats_subscribers') },
-    { value: '80+', label: t('stats_videos') },
-    { value: '5K+', label: t('stats_followers') },
-    { value: '5+', label: t('stats_experience') },
+    { value: '10+', label: t('stats_subscribers') },
+    { value: '100+', label: t('stats_videos') },
+    { value: '6', label: t('stats_followers') },
+    { value: '3', label: t('stats_experience') },
   ];
 const portfolio = [
   { name: 'KB-Consulting', logo: '/logo-kb-consulting.png', logoHeight: '40px', tag: t('p1_tag'), desc: t('p1_desc'), chips: t('p1_chips', { returnObjects: true }) as string[], link: '#' },
