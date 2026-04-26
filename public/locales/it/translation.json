@@ -1,0 +1,60 @@
+{
+  "nav_about": "Chi Sono",
+  "nav_consulting": "Consulenza",
+  "nav_home": "Home",
+  "nav_portfolio": "Portfolio",
+  "nav_contact": "Contatto",
+  "nav_cta": "Contattami",
+
+  "hero_tag": "fintech · edtech · global",
+  "hero_desc": "Costruisco e opero aziende di tecnologia finanziaria ed educativa. Collego HNWI e aziende con l'infrastruttura di pagamento di cui hanno bisogno.",
+  "hero_btn_portfolio": "Vedi Portfolio",
+  "hero_btn_about": "Scopri di Più",
+
+  "stats_subscribers": "Iscritti",
+  "stats_videos": "Video",
+  "stats_followers": "Follower",
+  "stats_experience": "Anni Esp.",
+
+  "about_tag": "Chi Sono",
+  "about_title": "Operatore FinTech &\nEdTech.",
+  "about_p1": "Sono <strong>Kevin A. Barquero</strong>. Fondatore e operatore di aziende di tecnologia finanziaria ed educativa con operazioni in Costa Rica, Panama e Stati Uniti. Tramite KB-Consulting collego HNWI e aziende con soluzioni di infrastruttura di pagamento e asset digitali. Tramite BBR Tek e Bellndesk costruisco piattaforme educative per istituzioni e creatori.",
+  "about_p2": "Il mio approccio è semplice: identificare problemi reali nei pagamenti e nell'educazione, costruire soluzioni che funzionino e collegare le persone giuste con l'infrastruttura giusta. Non gestisco capitale. Non fornisco consulenza finanziaria. Costruisco e opero.",
+  "about_badge": "Investitore · Web3 · Panama 🇵🇦",
+
+  "consulting_tag": "Consulenza",
+  "consulting_title": "Servizi.",
+  "consulting_subtitle": "Soluzioni che operiamo. Nessuna teoria — infrastruttura reale.",
+
+  "service1_title": "Infrastruttura di Pagamento",
+  "service1_desc": "Connessione con soluzioni stablecoin, on/off ramp in USD e accesso a banche internazionali per aziende e clienti ad alto patrimonio.",
+  "service2_title": "Strutturazione Aziendale",
+  "service2_desc": "Consulenza sulla strutturazione di entità in CR, PA e US per accedere all'infrastruttura finanziaria senza necessità di presenza locale.",
+  "service3_title": "Piattaforme Educative Enterprise",
+  "service3_desc": "Progettazione e sviluppo personalizzato di piattaforme educative (web, iOS, Android) per istituzioni e aziende.",
+  "service4_title": "Piattaforma SaaS per l'Educazione",
+  "service4_desc": "Soluzione white-label per creatori, accademie e istituzioni che vogliono lanciare la propria esperienza di educazione online.",
+  "service5_title": "Automazione delle Strategie",
+  "service5_desc": "Software di automazione per strategie TradingView. Strumenti indipendenti che ogni utente gestisce autonomamente.",
+  "service6_title": "Consulenza Strategica",
+  "service6_desc": "Consulenza su modello di business, go-to-market e scalabilità per aziende FinTech ed EdTech.",
+
+  "portfolio_tag": "Portfolio",
+  "portfolio_title": "Aziende & Progetti.",
+  "portfolio_subtitle": "Aziende che costruisco e opero in FinTech ed EdTech.",
+
+  "contact_tag": "Contatto",
+  "contact_title": "Lavoriamo Insieme.",
+  "contact_subtitle": "Hai bisogno di infrastruttura di pagamento, una piattaforma educativa o consulenza strategica in FinTech/EdTech? Parliamone.",
+  "contact_form_title": "Modulo di Contatto",
+  "contact_form_subtitle": "Parlami del tuo progetto e ti rispondo entro 24h.",
+  "contact_form_name": "Il tuo nome",
+  "contact_form_email": "tu@email.com",
+  "contact_form_message": "Come posso aiutarti?",
+  "contact_form_send": "Invia Messaggio",
+  "contact_form_calendar": "Prenota una chiamata di 15 min",
+
+  "social_whatsapp": "Per clienti LATAM",
+
+  "footer_copyright": "© 2026 Kevin Barquero."
+}
