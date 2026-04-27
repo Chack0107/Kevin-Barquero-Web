@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  TrendingUp, Shield, Zap, ArrowRight, Play, Users, Award, BarChart3, ChevronDown,
+  TrendingUp,ArrowRight, Play, Award, BarChart3, ChevronDown,
   Mail, Linkedin, MessageCircle, Calendar
 } from 'lucide-react';
 
@@ -410,7 +410,7 @@ const portfolio = [
                 <button
                   key={lng.code}
                   onClick={() => { i18n.changeLanguage(lng.code); setLangOpen(false); }}
-                  className={`flex items-center gap-2 w-full px-4 py-2.5 text-[13px] hover:bg-gray-50 transition-colors ${i18n.language === lng.code ? 'font-semibold text-[#1d1d1f]' : 'text-[#6e6e73]'}`}
+                  className={`flex items-center gap-2 w-full px-4 py-2.5 text-[13px] hover:bg-gray-60 transition-colors ${i18n.language === lng.code ? 'font-semibold text-[#1d1d1f]' : 'text-[#6e6e73]'}`}
                 >
                   <span>{lng.flag}</span>
                   <span>{lng.label}</span>
