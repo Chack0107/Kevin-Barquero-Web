@@ -1,6 +1,6 @@
 {
   "nav_about": "About Me",
-  "nav_consulting": "Consulting",
+  "nav_consulting": "What I Do",
   "nav_home": "Home",
   "nav_portfolio": "Portfolio",
   "nav_contact": "Contact",
@@ -19,7 +19,7 @@
   "about_p2": "That path shaped everything that followed. I moved into financial education, building EdTech platforms tailored to the trading and crypto space and developing proprietary scripts for TradingView, one of the most widely used FinTech platforms in the world. From there I built technology for companies in the trading industry before pivoting fully into EdTech and FinTech consulting.",
   "about_p3": "Today I run companies incorporated in Costa Rica, Panama, and the United States. Between 2018 and 2023 I educated more than 30,000 students across every continent on the fundamentals of crypto and digital finance, with my first international reach beginning in 2020. I have spoken at conferences across North America, Latin America, Europe, and Africa, and was invited by a Senate office in Buenos Aires to provide education on decentralized finance, Bitcoin, and digital asset fundamentals. I have also advised law firms and accounting practices throughout Costa Rica, Panama, and Latin America on digital assets and FinTech, and launched multiple SaaS platforms in both industries that reached thousands of users within their first 90 days.",
   "about_p4": "Through KB-Consulting, I help high-net-worth individuals and corporations access banking solutions, stablecoin infrastructure, and on/off ramp services in markets where the traditional system creates unnecessary friction. We are a consulting firm. We do not manage funds, hold assets, or act as a financial institution. What we do is connect the right people with the right infrastructure, and stay by their side every step of the way.",
-  "about_badge": "Investor · Web3 · Panama 🇵🇦",
+  "about_badge": "Investor · Entrepreneur · Consultant",
   "consulting_tag": "Consulting",
   "consulting_title": "What I Do.",
   "consulting_subtitle": "A focused set of services built from real experience in FinTech and EdTech.",
@@ -34,32 +34,81 @@
   "portfolio_subtitle": "Companies I build and operate in FinTech and EdTech.",
   "p1_tag": "FINTECH · CONSULTING",
   "p1_desc": "Consulting in digital payment infrastructure and corporate structuring for HNWIs and corporations. CR / PA / US.",
-  "p1_chips": ["Payment Infrastructure", "Stablecoins", "Corporate Structuring"],
+  "p1_chips": [
+    "Payment Infrastructure",
+    "Stablecoins",
+    "Corporate Structuring"
+  ],
   "p2_tag": "FINTECH · SOFTWARE",
   "p2_desc": "Enterprise EdTech development for the US market + automation software for TradingView strategies.",
-  "p2_chips": ["Automation", "TradingView", "EdTech", "Enterprise"],
+  "p2_chips": [
+    "Automation",
+    "TradingView",
+    "EdTech",
+    "Enterprise"
+  ],
   "p3_tag": "EDTECH · SAAS",
   "p3_desc": "White-label SaaS platform for creators, academies, and institutions looking to monetize their knowledge online.",
-  "p3_chips": ["SaaS", "White-Label", "Online Education"],
+  "p3_chips": [
+    "SaaS",
+    "White-Label",
+    "Online Education"
+  ],
   "p4_tag": "RETAIL · DESIGN",
   "p4_desc": "Specialized fabric store and premium custom curtain design service in southern Costa Rica.",
-  "p4_chips": ["Textiles", "Custom Design", "Premium Curtains"],
+  "p4_chips": [
+    "Textiles",
+    "Custom Design",
+    "Premium Curtains"
+  ],
   "p5_tag": "EDTECH · ENTERPRISE",
   "p5_desc": "Custom enterprise educational platforms (web, iOS, Android) for institutions and corporations in Latin America.",
-  "p5_chips": ["EdTech", "Custom Development", "Educational Platforms"],
+  "p5_chips": [
+    "EdTech",
+    "Custom Development",
+    "Educational Platforms"
+  ],
   "p6_tag": "EDTECH · ENTERPRISE",
   "p6_desc": "Custom enterprise educational platforms (web, iOS, Android) for institutions and corporations in Latin America.",
-  "p6_chips": ["EdTech", "Custom Development", "Educational Platforms"],
+  "p6_chips": [
+    "EdTech",
+    "Custom Development",
+    "Educational Platforms"
+  ],
   "contact_tag": "Contact",
-  "contact_title": "Let's Work Together.",
-  "contact_subtitle": "Do you need payment infrastructure, an educational platform, or strategic advisory in FinTech/EdTech? Let's talk.",
-  "contact_form_title": "Contact Form",
-  "contact_form_subtitle": "Tell me about your project and I'll get back to you within 24h.",
+  "contact_title": "Start a Conversation.",
+  "contact_subtitle": "Whether you have a specific challenge in FinTech or EdTech, or simply want to explore what's possible, I'm easy to reach and quick to respond.",
+  "contact_form_title": "Send a Message",
+  "contact_form_subtitle": "Tell me what you're working on and I'll get back to you within 24 hours.",
   "contact_form_name": "Your name",
   "contact_form_email": "you@email.com",
-  "contact_form_message": "How can I help you?",
+  "contact_form_message": "What are you working on?",
   "contact_form_send": "Send Message",
   "contact_form_calendar": "Schedule a 15-min call",
   "social_whatsapp": "For LATAM clients",
-  "footer_copyright": "© 2026 Kevin Barquero."
+  "footer_copyright": "© 2026 Kevin Barquero.",
+  "ventures_label": "Other Ventures",
+  "v1_tag": "TECH · EVENTS",
+  "v1_desc": "An annual technology and crypto conference hosted in Costa Rica, bringing together builders, investors, and innovators from across the region and beyond.",
+  "v1_chips": [
+    "Crypto",
+    "Tech",
+    "Events",
+    "Costa Rica"
+  ],
+  "v2_tag": "RETAIL · DESIGN",
+  "v2_desc": "A premium fabric store and custom curtain design service based in southern Costa Rica.",
+  "v2_chips": [
+    "Retail",
+    "Custom Design",
+    "Premium"
+  ],
+  "contact_wa_cr_label": "WhatsApp — Costa Rica",
+  "contact_wa_us_label": "WhatsApp — United States",
+  "contact_wa_faster": "For a faster response",
+  "vip_tag": "Clients",
+  "vip_title": "Already a client?",
+  "vip_subtitle": "For prioritized support or special requests, our client services team is here for you.",
+  "vip_email_label": "Priority support",
+  "vip_wa_label": "WhatsApp — US"
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  TrendingUp,ArrowRight, Play, Award, BarChart3, ChevronDown,
+  TrendingUp, Shield, Zap, ArrowRight, Play, Users, Award, BarChart3, ChevronDown,
   Mail, Linkedin, MessageCircle, Calendar
 } from 'lucide-react';
 
@@ -75,18 +75,21 @@ export default function App() {
     { value: '3', label: t('stats_experience') },
   ];
 const portfolio = [
-  { name: 'KB-Consulting', logo: '/logo-kb-consulting.png', logoHeight: '40px', tag: t('p1_tag'), desc: t('p1_desc'), chips: t('p1_chips', { returnObjects: true }) as string[], link: '#' },
-  { name: 'K&F Technologies LLC', logo: '/logo-kf-tech.png', logoHeight: '40px', tag: t('p2_tag'), desc: t('p2_desc'), chips: t('p2_chips', { returnObjects: true }) as string[], link: '#' },
-  { name: 'Bellndesk', logo: '/logo-bell-n-desk.png', logoHeight: '40px', tag: t('p3_tag'), desc: t('p3_desc'), chips: t('p3_chips', { returnObjects: true }) as string[], link: 'https://bellndesk.com/' },
-  { name: 'Textiles Barquero', logo: '/logo-tienda-hazel.png', logoHeight: '100px', tag: t('p4_tag'), desc: t('p4_desc'), chips: t('p4_chips', { returnObjects: true }) as string[], link: '#' },
-  { name: 'BBR Tek Panama', logo: '/logo-bbr-tek.png', logoHeight: '40px', tag: t('p5_tag'), desc: t('p5_desc'), chips: t('p5_chips', { returnObjects: true }) as string[], link: 'https://bbrtek.com/' },
-  { name: 'Blockchain Jungle', logo: '/logo-blockchain-jungle.png', logoHeight: '100px', tag: t('p6_tag'), desc: t('p6_desc'), chips: t('p6_chips', { returnObjects: true }) as string[], link: 'https://www.blockchainjungle.xyz/' },
+  { name: 'KB Consulting', logo: '/logo-kb-consulting.png', logoHeight: '40px', tag: t('p1_tag'), desc: t('p1_desc'), chips: t('p1_chips', { returnObjects: true }) as string[], link: '#' },
+  { name: 'KF Tech', logo: '/logo-kf-tech.png', logoHeight: '40px', tag: t('p2_tag'), desc: t('p2_desc'), chips: t('p2_chips', { returnObjects: true }) as string[], link: '#' },
+  { name: 'Bell n Desk', logo: '/logo-bell-n-desk.png', logoHeight: '40px', tag: t('p3_tag'), desc: t('p3_desc'), chips: t('p3_chips', { returnObjects: true }) as string[], link: 'https://bellndesk.com/' },
+  { name: 'BBR Tek', logo: '/logo-bbr-tek.png', logoHeight: '40px', tag: t('p4_tag'), desc: t('p4_desc'), chips: t('p4_chips', { returnObjects: true }) as string[], link: 'https://bbrtek.com/' },
+];
+
+const ventures = [
+  { name: 'Blockchain Jungle', logo: '/logo-blockchain-jungle.png', logoHeight: '100px', tag: t('v1_tag'), desc: t('v1_desc'), chips: t('v1_chips', { returnObjects: true }) as string[], link: 'https://www.blockchainjungle.xyz/' },
+  { name: 'Tienda Hazel', logo: '/logo-tienda-hazel.png', logoHeight: '100px', tag: t('v2_tag'), desc: t('v2_desc'), chips: t('v2_chips', { returnObjects: true }) as string[], link: '#' },
 ];
 
   const socials = [
     { icon: <Mail size={20} />, label: 'Email', handle: 'contact@kevinbarquero.com', href: 'mailto:contact@kevinbarquero.com' },
-    { icon: <Linkedin size={20} />, label: 'LinkedIn', handle: 'Kevin Barquero', href: 'https://www.linkedin.com/in/kevinbarquero' },
-    { icon: <MessageCircle size={20} />, label: 'WhatsApp Business', handle: t('social_whatsapp'), href: 'https://wa.me/50600000000' },
+    { icon: <MessageCircle size={20} />, label: t('contact_wa_cr_label'), handle: t('contact_wa_faster'), href: 'https://wa.me/50600000000' },
+    { icon: <MessageCircle size={20} />, label: t('contact_wa_us_label'), handle: t('contact_wa_faster'), href: 'https://wa.me/10000000000' },
   ];
 
   const currentLang = LANGS.find(l => l.code === i18n.language) || LANGS[0];
@@ -267,24 +270,43 @@ const portfolio = [
               <p className="text-[15px] md:text-[17px] text-[#6e6e73] max-w-xl mx-auto">{t('portfolio_subtitle')}</p>
             </div>
           </FadeSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+
+          {/* Main Portfolio */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5 mb-6">
             {portfolio.map((p, i) => (
               <FadeSection key={i}>
                 <div className="bg-[#f5f5f7] rounded-2xl p-6 lg:p-8 hover:bg-[#ebebed] transition-colors h-full flex flex-col">
                   <p className="text-[11px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-2">{p.tag}</p>
-                  <a
-                    href={p.link}
-                    target={p.link !== '#' ? '_blank' : '_self'}
-                    rel="noopener noreferrer"
-                    className="block mb-4"
-                  >
+                  <a href={p.link} target={p.link !== '#' ? '_blank' : '_self'} rel="noopener noreferrer" className="block mb-4">
                     {p.logo ? (
-                      <img
-                        src={p.logo}
-                        alt={p.name}
-                        style={{ height: p.logoHeight, width: 'auto' }}
-                        className="object-contain opacity-80 hover:opacity-100 transition-opacity"
-                      />
+                      <img src={p.logo} alt={p.name} style={{ height: p.logoHeight, width: 'auto' }} className="object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                    ) : (
+                      <h3 className="text-[22px] lg:text-[24px] font-bold text-[#1d1d1f] hover:underline">{p.name}</h3>
+                    )}
+                  </a>
+                  <p className="text-[14px] lg:text-[15px] text-[#6e6e73] leading-relaxed mb-6 flex-1">{p.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {p.chips.map((c, j) => (
+                      <span key={j} className="px-3 py-1 rounded-full bg-white text-[#1d1d1f] text-[12px] font-medium border border-gray-200">{c}</span>
+                    ))}
+                  </div>
+                </div>
+              </FadeSection>
+            ))}
+          </div>
+
+          {/* Other Ventures */}
+          <FadeSection>
+            <p className="text-[11px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4">{t('ventures_label')}</p>
+          </FadeSection>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+            {ventures.map((p, i) => (
+              <FadeSection key={i}>
+                <div className="bg-[#f5f5f7] rounded-2xl p-6 lg:p-8 hover:bg-[#ebebed] transition-colors h-full flex flex-col">
+                  <p className="text-[11px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-2">{p.tag}</p>
+                  <a href={p.link} target={p.link !== '#' ? '_blank' : '_self'} rel="noopener noreferrer" className="block mb-4">
+                    {p.logo ? (
+                      <img src={p.logo} alt={p.name} style={{ height: p.logoHeight, width: 'auto' }} className="object-contain opacity-80 hover:opacity-100 transition-opacity" />
                     ) : (
                       <h3 className="text-[22px] lg:text-[24px] font-bold text-[#1d1d1f] hover:underline">{p.name}</h3>
                     )}
@@ -329,22 +351,44 @@ const portfolio = [
               </div>
             </FadeSection>
             <FadeSection>
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10">
-                <h3 className="text-[22px] lg:text-[24px] font-bold mb-2">{t('contact_form_title')}</h3>
-                <p className="text-[14px] text-[#86868b] mb-6">{t('contact_form_subtitle')}</p>
-                <div className="space-y-4">
-                  <input type="text" placeholder={t('contact_form_name')} className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-[14px] text-white placeholder-[#6e6e73] focus:outline-none focus:border-white/30 transition-colors" />
-                  <input type="email" placeholder={t('contact_form_email')} className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-[14px] text-white placeholder-[#6e6e73] focus:outline-none focus:border-white/30 transition-colors" />
-                  <textarea rows={4} placeholder={t('contact_form_message')} className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-[14px] text-white placeholder-[#6e6e73] focus:outline-none focus:border-white/30 transition-colors resize-none" />
-                  <button onClick={() => window.location.href = 'mailto:contact@kevinbarquero.com'} className="w-full bg-white text-[#1d1d1f] font-semibold py-4 md:py-3.5 rounded-full hover:bg-gray-100 transition-colors text-[15px]">
-                    {t('contact_form_send')}
-                  </button>
+              <div className="space-y-4">
+                {/* Main form */}
+                <div className="bg-white/5 border border-white/10 rounded-3xl p-8 lg:p-10">
+                  <h3 className="text-[22px] lg:text-[24px] font-bold mb-2">{t('contact_form_title')}</h3>
+                  <p className="text-[14px] text-[#86868b] mb-6">{t('contact_form_subtitle')}</p>
+                  <div className="space-y-4">
+                    <input type="text" placeholder={t('contact_form_name')} className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-[14px] text-white placeholder-[#6e6e73] focus:outline-none focus:border-white/30 transition-colors" />
+                    <input type="email" placeholder={t('contact_form_email')} className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-[14px] text-white placeholder-[#6e6e73] focus:outline-none focus:border-white/30 transition-colors" />
+                    <textarea rows={4} placeholder={t('contact_form_message')} className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-[14px] text-white placeholder-[#6e6e73] focus:outline-none focus:border-white/30 transition-colors resize-none" />
+                    <button onClick={() => window.location.href = 'mailto:contact@kevinbarquero.com'} className="w-full bg-white text-[#1d1d1f] font-semibold py-4 md:py-3.5 rounded-full hover:bg-gray-100 transition-colors text-[15px]">
+                      {t('contact_form_send')}
+                    </button>
+                  </div>
                 </div>
-                <div className="mt-4 pt-4 border-t border-white/10">
-                  <button onClick={() => window.open('https://calendly.com/kevinbarquero', '_blank')} className="w-full flex items-center justify-center gap-2 border border-white/20 text-white font-medium py-3 rounded-full hover:bg-white/10 transition-colors text-[14px]">
-                    <Calendar size={16} />
-                    {t('contact_form_calendar')}
-                  </button>
+
+                {/* VIP block */}
+                <div className="bg-white/5 border border-white/10 rounded-3xl p-6 lg:p-8">
+                  <p className="text-[11px] font-semibold tracking-widest uppercase text-[#86868b] mb-2">{t('vip_tag')}</p>
+                  <h3 className="text-[18px] font-bold mb-1">{t('vip_title')}</h3>
+                  <p className="text-[13px] text-[#86868b] mb-5">{t('vip_subtitle')}</p>
+                  <div className="space-y-3">
+                    <a href="mailto:vipclients@kevinbarquero.com" className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10 group">
+                      <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white flex-shrink-0"><Mail size={15} /></div>
+                      <div>
+                        <p className="text-[13px] font-medium">vipclients@kevinbarquero.com</p>
+                        <p className="text-[11px] text-[#86868b]">{t('vip_email_label')}</p>
+                      </div>
+                      <ArrowRight size={14} className="ml-auto text-[#86868b] group-hover:text-white transition-colors flex-shrink-0" />
+                    </a>
+                    <a href="https://wa.me/10000000000" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10 group">
+                      <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white flex-shrink-0"><MessageCircle size={15} /></div>
+                      <div>
+                        <p className="text-[13px] font-medium">{t('vip_wa_label')}</p>
+                        <p className="text-[11px] text-[#86868b]">{t('contact_wa_faster')}</p>
+                      </div>
+                      <ArrowRight size={14} className="ml-auto text-[#86868b] group-hover:text-white transition-colors flex-shrink-0" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </FadeSection>
@@ -410,7 +454,7 @@ const portfolio = [
                 <button
                   key={lng.code}
                   onClick={() => { i18n.changeLanguage(lng.code); setLangOpen(false); }}
-                  className={`flex items-center gap-2 w-full px-4 py-2.5 text-[13px] hover:bg-gray-60 transition-colors ${i18n.language === lng.code ? 'font-semibold text-[#1d1d1f]' : 'text-[#6e6e73]'}`}
+                  className={`flex items-center gap-2 w-full px-4 py-2.5 text-[13px] hover:bg-gray-50 transition-colors ${i18n.language === lng.code ? 'font-semibold text-[#1d1d1f]' : 'text-[#6e6e73]'}`}
                 >
                   <span>{lng.flag}</span>
                   <span>{lng.label}</span>

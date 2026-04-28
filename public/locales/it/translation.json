@@ -1,6 +1,6 @@
 {
   "nav_about": "Chi Sono",
-  "nav_consulting": "Consulenza",
+  "nav_consulting": "Cosa Faccio",
   "nav_home": "Home",
   "nav_portfolio": "Portfolio",
   "nav_contact": "Contatto",
@@ -19,7 +19,7 @@
   "about_p2": "Quel percorso ha plasmato tutto ciò che è venuto dopo. Mi sono avvicinato all'educazione finanziaria, costruendo piattaforme EdTech dedicate al trading e al cripto, e sviluppando script proprietari per TradingView, una delle piattaforme FinTech più utilizzate al mondo. Da lì ho sviluppato tecnologia per aziende del settore prima di concentrarmi completamente sulla consulenza EdTech e FinTech.",
   "about_p3": "Oggi gestisco aziende costituite in Costa Rica, Panama e Stati Uniti. Tra il 2018 e il 2023 ho formato oltre 30.000 studenti in tutti i continenti sui fondamenti di cripto e finanza digitale, con il mio primo impatto internazionale che ha preso forma nel 2020. Ho parlato a conferenze in Nord America, America Latina, Europa e Africa, e sono stato invitato da un ufficio del Senato a Buenos Aires per fornire formazione su finanza decentralizzata, Bitcoin e asset digitali. Ho anche affiancato studi legali e contabili in Costa Rica, Panama e in tutta l'America Latina, e lanciato più piattaforme SaaS che hanno raggiunto migliaia di utenti nei primi 90 giorni.",
   "about_p4": "Attraverso KB-Consulting, aiuto persone ad alto patrimonio netto e aziende ad accedere a soluzioni bancarie, infrastrutture stablecoin e servizi di on/off ramp in mercati dove il sistema tradizionale crea frizioni inutili. Siamo una società di consulenza. Non gestiamo fondi, non custodiamo asset e non agiamo come istituzione finanziaria. Ciò che facciamo è collegare le persone giuste con l'infrastruttura giusta, e restare al loro fianco in ogni fase del percorso.",
-  "about_badge": "Investitore · Web3 · Panama 🇵🇦",
+  "about_badge": "Investitore · Emprenditore · Consultor",
   "consulting_tag": "Consulenza",
   "consulting_title": "Cosa Faccio.",
   "consulting_subtitle": "Un insieme focalizzato di servizi costruiti sulla base di esperienza reale in FinTech e EdTech.",
@@ -34,32 +34,81 @@
   "portfolio_subtitle": "Aziende che costruisco e opero in FinTech ed EdTech.",
   "p1_tag": "FINTECH · CONSULENZA",
   "p1_desc": "Consulenza in infrastruttura di pagamenti digitali e strutturazione aziendale per HNWI e aziende. CR / PA / US.",
-  "p1_chips": ["Infrastruttura di Pagamento", "Stablecoin", "Strutturazione Aziendale"],
+  "p1_chips": [
+    "Infrastruttura di Pagamento",
+    "Stablecoin",
+    "Strutturazione Aziendale"
+  ],
   "p2_tag": "FINTECH · SOFTWARE",
   "p2_desc": "Sviluppo EdTech enterprise per il mercato US + software di automazione di strategie per TradingView.",
-  "p2_chips": ["Automazione", "TradingView", "EdTech", "Enterprise"],
+  "p2_chips": [
+    "Automazione",
+    "TradingView",
+    "EdTech",
+    "Enterprise"
+  ],
   "p3_tag": "EDTECH · SAAS",
   "p3_desc": "Piattaforma SaaS white-label per creatori, accademie e istituzioni che vogliono monetizzare le proprie conoscenze online.",
-  "p3_chips": ["SaaS", "White-Label", "Educazione Online"],
+  "p3_chips": [
+    "SaaS",
+    "White-Label",
+    "Educazione Online"
+  ],
   "p4_tag": "RETAIL · DESIGN",
   "p4_desc": "Negozio di tessuti specializzati e servizio premium di design di tende su misura nel sud della Costa Rica.",
-  "p4_chips": ["Tessuti", "Design Personalizzato", "Tende Premium"],
+  "p4_chips": [
+    "Tessuti",
+    "Design Personalizzato",
+    "Tende Premium"
+  ],
   "p5_tag": "EDTECH · ENTERPRISE",
   "p5_desc": "Piattaforme educative enterprise su misura (web, iOS, Android) per istituzioni e aziende in America Latina.",
-  "p5_chips": ["EdTech", "Sviluppo Custom", "Piattaforme Educative"],
+  "p5_chips": [
+    "EdTech",
+    "Sviluppo Custom",
+    "Piattaforme Educative"
+  ],
   "p6_tag": "EDTECH · ENTERPRISE",
   "p6_desc": "Piattaforme educative enterprise su misura (web, iOS, Android) per istituzioni e aziende in America Latina.",
-  "p6_chips": ["EdTech", "Sviluppo Custom", "Piattaforme Educative"],
+  "p6_chips": [
+    "EdTech",
+    "Sviluppo Custom",
+    "Piattaforme Educative"
+  ],
   "contact_tag": "Contatto",
-  "contact_title": "Lavoriamo Insieme.",
-  "contact_subtitle": "Hai bisogno di infrastruttura di pagamento, una piattaforma educativa o consulenza strategica in FinTech/EdTech? Parliamone.",
-  "contact_form_title": "Modulo di Contatto",
-  "contact_form_subtitle": "Parlami del tuo progetto e ti rispondo entro 24h.",
+  "contact_title": "Inizia una Conversazione.",
+  "contact_subtitle": "Che tu abbia una sfida specifica in FinTech o EdTech, o semplicemente voglia esplorare le possibilità, sono facile da raggiungere e rispondo velocemente.",
+  "contact_form_title": "Invia un Messaggio",
+  "contact_form_subtitle": "Dimmi su cosa stai lavorando e ti risponderò entro 24 ore.",
   "contact_form_name": "Il tuo nome",
   "contact_form_email": "tu@email.com",
-  "contact_form_message": "Come posso aiutarti?",
+  "contact_form_message": "Su cosa stai lavorando?",
   "contact_form_send": "Invia Messaggio",
   "contact_form_calendar": "Prenota una chiamata di 15 min",
   "social_whatsapp": "Per clienti LATAM",
-  "footer_copyright": "© 2026 Kevin Barquero."
+  "footer_copyright": "© 2026 Kevin Barquero.",
+  "ventures_label": "Altre Iniziative",
+  "v1_tag": "TECH · EVENTI",
+  "v1_desc": "Una conferenza annuale su tecnologia e cripto ospitata in Costa Rica, che riunisce builder, investitori e innovatori da tutta la regione e oltre.",
+  "v1_chips": [
+    "Cripto",
+    "Tecnologia",
+    "Eventi",
+    "Costa Rica"
+  ],
+  "v2_tag": "RETAIL · DESIGN",
+  "v2_desc": "Negozio di tessuti specializzati e servizio premium di design di tende su misura nel sud della Costa Rica.",
+  "v2_chips": [
+    "Retail",
+    "Design Personalizzato",
+    "Premium"
+  ],
+  "contact_wa_cr_label": "WhatsApp — Costa Rica",
+  "contact_wa_us_label": "WhatsApp — Stati Uniti",
+  "contact_wa_faster": "Per una risposta più rapida",
+  "vip_tag": "Clienti",
+  "vip_title": "Sei già un cliente?",
+  "vip_subtitle": "Per supporto prioritario o richieste speciali, il nostro team di assistenza clienti è qui per te.",
+  "vip_email_label": "Supporto prioritario",
+  "vip_wa_label": "WhatsApp — USA"
 }
