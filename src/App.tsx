@@ -396,6 +396,18 @@ const ventures = [
         </div>
       </section>
 
+      {/* DISCLAIMER */}
+      <section className="bg-[#111] border-t border-white/10 py-10 md:py-12">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <p className="text-[11px] font-semibold tracking-widest uppercase text-[#6e6e73] mb-4 text-center">Legal Disclaimer</p>
+          <div className="space-y-3 text-[12px] text-[#6e6e73] leading-relaxed text-center">
+            <p>Kevin Barquero is an independent consultant operating in FinTech and EdTech, based in the Republic of Panama. All companies featured on this website are independent legal entities, each separately incorporated and responsible for their own legal and compliance obligations in their respective jurisdictions.</p>
+            <p>As a consultant, Kevin Barquero does not operate as a financial institution, bank, licensed broker, or registered investment advisor in any jurisdiction. Nothing on this website constitutes financial, investment, legal, or tax advice of any kind. All consulting services are strictly informational and advisory in nature.</p>
+            <p>Kevin Barquero does not manage, hold, custody, or transact client funds or digital assets at any time. The information and services described on this website are not directed at residents of jurisdictions where such consulting activities would require local licensing or registration.</p>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER DESKTOP */}
       <footer className="hidden md:block py-8 bg-[#1d1d1f] border-t border-white/10">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
